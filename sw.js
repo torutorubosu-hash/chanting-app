@@ -1,4 +1,4 @@
-const CACHE_NAME = 'chanting-app-v9';
+const CACHE_NAME = 'chanting-app-v10';
 const ASSETS = [
   './',
   './index.html',
