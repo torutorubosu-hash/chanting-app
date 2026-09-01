@@ -42,11 +42,11 @@ let appState = {
 };
 
 const STORAGE_KEYS = {
-  LIBRARY: 'chant_app_library_v7',
-  SEQUENCES: 'chant_app_sequences_v7',
-  ACTIVE_SEQ: 'chant_app_active_seq_v7',
-  ACTIVE_ITEMS: 'chant_app_active_items_v7',
-  SETTINGS: 'chant_app_settings_v7'
+  LIBRARY: 'chant_app_library_v9',
+  SEQUENCES: 'chant_app_sequences_v9',
+  ACTIVE_SEQ: 'chant_app_active_seq_v9',
+  ACTIVE_ITEMS: 'chant_app_active_items_v9',
+  SETTINGS: 'chant_app_settings_v9'
 };
 
 // Web Audio API Bell Synthesizer (Mobile-Safe)
@@ -99,22 +99,24 @@ function unlockAudioOnMobile() {
 
 // Initialize Application Data
 function initData() {
+  // Always initialize from latest fresh DEFAULT_PRAYERS
+  appState.library = JSON.parse(JSON.stringify(DEFAULT_PRAYERS));
+
   const savedLibrary = safeStorage.getItem(STORAGE_KEYS.LIBRARY);
   if (savedLibrary) {
-    try { appState.library = JSON.parse(savedLibrary); } catch (e) { appState.library = JSON.parse(JSON.stringify(DEFAULT_PRAYERS)); }
-  } else {
-    appState.library = JSON.parse(JSON.stringify(DEFAULT_PRAYERS));
+    try {
+      const parsed = JSON.parse(savedLibrary);
+      if (Array.isArray(parsed)) {
+        parsed.forEach(p => {
+          if (p.id && (p.id.startsWith('custom_') || p.id.startsWith('cloud_'))) {
+            if (!appState.library.some(x => x.id === p.id)) {
+              appState.library.push(p);
+            }
+          }
+        });
+      }
+    } catch (e) {}
   }
-
-  // Always sync official default prayers with updated texts
-  DEFAULT_PRAYERS.forEach(dp => {
-    const existingIndex = appState.library.findIndex(p => p.id === dp.id);
-    if (existingIndex !== -1) {
-      appState.library[existingIndex] = JSON.parse(JSON.stringify(dp));
-    } else {
-      appState.library.push(JSON.parse(JSON.stringify(dp)));
-    }
-  });
 
   const savedSeqs = safeStorage.getItem(STORAGE_KEYS.SEQUENCES);
   if (savedSeqs) {
