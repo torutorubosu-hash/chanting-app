@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>บทสวดมนต์จัดลำดับ - Chanting App</title>
+  
+  <!-- App Icons for Mobile & Desktop -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <meta name="theme-color" content="#d97706">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="บทสวดมนต์">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <style>
+    :root {
+      --bg-main: #0b0f19;
+      --bg-card: #151d2e;
+      --bg-card-subtle: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-gold: #fbbf24;
+      --gold-primary: #d97706;
+      --gold-hover: #b45309;
+      --gold-light: rgba(217, 119, 6, 0.15);
+      --border-color: #243049;
+      --nav-bg: rgba(11, 15, 25, 0.95);
+      --font-scale: 1.0;
+    }
+
+    [data-theme="light"] {
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-subtle: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-gold: #b45309;
+      --gold-primary: #d97706;
+      --gold-hover: #92400e;
+      --gold-light: rgba(217, 119, 6, 0.1);
+      --border-color: #e2e8f0;
+      --nav-bg: rgba(255, 255, 255, 0.95);
+    }
+
+    [data-theme="sepia"] {
+      --bg-main: #fcf8ec;
+      --bg-card: #f5eedb;
+      --bg-card-subtle: #ece2c8;
+      --text-main: #3d2c1d;
+      --text-muted: #7c6853;
+      --text-gold: #934c0e;
+      --gold-primary: #b45309;
+      --gold-hover: #78350f;
+      --gold-light: rgba(180, 83, 9, 0.12);
+      --border-color: #dfd4b8;
+      --nav-bg: rgba(252, 248, 236, 0.95);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Sarabun', 'Noto Sans Thai', 'Prompt', 'Leelawadee UI', sans-serif;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 1rem;
+      padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+      flex: 1;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: var(--nav-bg);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-gold);
+    }
+
+    .header-logo-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      vertical-align: middle;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-icon {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-icon:active {
+      transform: scale(0.92);
+      background-color: var(--gold-light);
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-around;
+      padding: 0.5rem 0.25rem max(0.5rem, env(safe-area-inset-bottom, 0.5rem));
+      z-index: 40;
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      padding: 0.4rem 0.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex: 1;
+    }
+
+    .nav-item.active {
+      color: var(--text-gold);
+      font-weight: 600;
+    }
+
+    .nav-item svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* Cards & Components */
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background-color: var(--gold-light);
+      color: var(--text-gold);
+    }
+
+    .badge-secondary {
+      background-color: var(--bg-card-subtle);
+      color: var(--text-muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background-color: var(--gold-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+    }
+
+    .btn-primary:active {
+      background-color: var(--gold-hover);
+      transform: scale(0.97);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-card-subtle);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .btn-sm {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.82rem;
+      border-radius: 0.5rem;
+    }
+
+    /* Sequence Item Card in Unified List */
+    .sequence-item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.65rem;
+      transition: all 0.15s ease;
+    }
+
+    .sequence-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sequence-item-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.45rem;
+      border-top: 1px dashed var(--border-color);
+      margin-top: 0.45rem;
+      gap: 0.5rem;
+    }
+
+    /* Repetition Stepper */
+    .rep-stepper {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 0.15rem;
+    }
+
+    .rep-stepper-btn {
+      background: none;
+      border: none;
+      color: var(--text-main);
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 0.35rem;
+      font-size: 1rem;
+    }
+
+    .rep-stepper-btn:active {
+      background: var(--gold-light);
+      color: var(--text-gold);
+    }
+
+    .rep-stepper-value {
+      padding: 0 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-gold);
+      min-width: 50px;
+      text-align: center;
+    }
+
+    .item-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .btn-action-sm {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 32px;
+      height: 32px;
+      border-radius: 0.4rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .btn-action-sm:active {
+      background-color: var(--gold-light);
+    }
+
+    /* Reader View */
+    .chant-header {
+      text-align: center;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .chant-progress-bar {
+      height: 6px;
+      width: 100%;
+      background: var(--bg-card-subtle);
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+
+    .chant-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #d97706, #fbbf24);
+      transition: width 0.3s ease;
+    }
+
+    .prayer-title {
+      font-size: calc(1.35rem * var(--font-scale));
+      font-weight: 700;
+      color: var(--text-gold);
+      margin-bottom: 0.35rem;
+      line-height: 1.4;
+    }
+
+    .prayer-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .prayer-content {
+      font-size: calc(1.15rem * var(--font-scale));
+      line-height: 1.95;
+    }
+
+    .verse-block {
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .verse-block:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .pali-verse {
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .thai-meaning {
+      color: var(--text-muted);
+      font-size: 0.9em;
+      padding-left: 0.75rem;
+      border-left: 3px solid var(--gold-primary);
+      line-height: 1.65;
+    }
+
+    /* Counter Widget in Chanting View */
+    .counter-widget {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-card-subtle);
+      border-radius: 0.85rem;
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+    }
+
+    .counter-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d97706, #f59e0b);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+      transition: transform 0.1s;
+      border: none;
+    }
+
+    .counter-circle:active {
+      transform: scale(0.9);
+    }
+
+    /* Auto Scroll Controls */
+    .auto-scroll-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Search & Inputs */
+    .search-box {
+      position: relative;
+      margin-bottom: 0.75rem;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.75rem 1rem 0.75rem 2.6rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+
+    .category-pills {
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+      padding-bottom: 0.6rem;
+      margin-bottom: 0.75rem;
+      scrollbar-width: none;
+    }
+
+    .category-pill {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .category-pill.active {
+      background: var(--gold-primary);
+      color: #fff;
+      border-color: var(--gold-primary);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 60;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      width: 100%;
+      max-width: 560px;
+      max-height: 88vh;
+      max-height: 88dvh;
+      overflow-y: auto;
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .input-field {
+      width: 100%;
+      background: var(--bg-main);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.65rem 0.85rem;
+      border-radius: 0.5rem;
+      margin-top: 0.35rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    textarea.input-field {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .network-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-weight: 500;
+    }
+
+    .network-online {
+      background: rgba(34, 197, 94, 0.15);
+      color: #22c55e;
+    }
+
+    .network-offline {
+      background: rgba(148, 163, 184, 0.15);
+      color: var(--text-muted);
+    }
+
+    .nav-buttons-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tab-screen {
+      display: none;
+    }
+
+    .tab-screen.active {
+      display: block;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-logo">
+      <img src="icon.svg" alt="Icon" class="header-logo-icon">
+      <span>บทสวดมนต์</span>
+    </div>
+    <div class="header-controls">
+      <button type="button" class="btn-icon" id="btn-bell" title="สั่นกระดิ่ง/ระฆัง">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+          <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+        </svg>
+      </button>
+      <button type="button" class="btn-icon" id="btn-font-dec" title="ลดขนาดตัวอักษร">A-</button>
+      <button type="button" class="btn-icon" id="btn-font-inc" title="เพิ่มขนาดตัวอักษร">A+</button>
+      <button type="button" class="btn-icon" id="btn-theme" title="เปลี่ยนธีม สีพื้นหลัง">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2"/>
+          <path d="M12 20v2"/>
+          <path d="m4.93 4.93 1.41 1.41"/>
+          <path d="m17.66 17.66 1.41 1.41"/>
+          <path d="M2 12h2"/>
+          <path d="M20 12h2"/>
+          <path d="m6.34 17.66-1.41 1.41"/>
+          <path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- TAB 1: UNIFIED SETUP & REORDER SCREEN (หน้าเลือกและจัดลำดับบทสวด + ตั้งจำนวนจบ) -->
+    <div id="tab-setup" class="tab-screen active">
+
+      <!-- Preset & Action Bar Card -->
+      <div class="card" style="padding: 1rem 1.15rem; margin-bottom: 0.85rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+          <h2 style="font-size: 1.05rem; font-weight: 700; color: var(--text-gold);">เลือกชุดบทสวดมนต์:</h2>
+          <span class="badge" id="setup-total-badge">0 บท</span>
+        </div>
+        <select id="select-active-preset" class="input-field" style="margin-bottom: 0.6rem;">
+          <!-- Populated by JS -->
+        </select>
+
+        <div style="display: flex; gap: 0.4rem;">
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-open-add-prayer-modal" style="flex: 1.2;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            <span>+ เพิ่มบทสวดเข้าชุด</span>
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-save-as-new-seq" style="flex: 1;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+            </svg>
+            <span>บันทึกชุดนี้</span>
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-clear-all-seq" style="flex: 0.7; color: #ef4444;" title="ล้างทั้งหมด">
+            ล้าง
+          </button>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; padding: 0 0.25rem;">
+        <span style="font-size: 0.88rem; font-weight: 600; color: var(--text-muted);">ลำดับการสวดมนต์ & จำนวนจบ:</span>
+        <span id="setup-total-reps-summary" style="font-size: 0.8rem; color: var(--text-gold);"></span>
+      </div>
+
+      <!-- Unified Sequence Items List -->
+      <div id="unified-sequence-list">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Quick Add Section Button (Bottom of list) -->
+      <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+        <button type="button" class="btn btn-secondary btn-block" onclick="openAddPrayerModal()" style="border-style: dashed; padding: 0.75rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          <span>แตะเพื่อเลือกเพิ่มบทสวดมนต์อื่นๆ จากคลัง</span>
+        </button>
+      </div>
+
+      <!-- Sticky Start Chanting Button -->
+      <div style="position: sticky; bottom: 4.5rem; z-index: 30; padding-top: 0.5rem;">
+        <button type="button" id="btn-start-chanting-main" class="btn btn-primary btn-block" style="padding: 0.85rem 1.25rem; font-size: 1.08rem; box-shadow: 0 6px 18px rgba(217, 119, 6, 0.45);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          <span>เริ่มสวดมนต์ตามลำดับ 🙏</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- TAB 2: CHANTING READER SCREEN (หน้าโหมดอ่านสวดมนต์) -->
+    <div id="tab-chant" class="tab-screen">
+      <div class="chant-header">
+        <div class="chant-progress-bar">
+          <div id="chant-progress-fill" class="chant-progress-fill" style="width: 10%;"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <span id="chant-sequence-name" class="badge">ชุดสวดมนต์</span>
+          <span id="chant-step-indicator" style="font-size: 0.8rem; color: var(--text-muted);">บทที่ 1 / 1</span>
+        </div>
+      </div>
+
+      <!-- Auto scroll & Quick Control Bar -->
+      <div class="auto-scroll-bar">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <button type="button" id="btn-autoscroll" class="btn btn-secondary btn-sm" style="display: flex; align-items: center; gap: 0.3rem;">
+            <svg id="icon-scroll-play" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span id="label-autoscroll">เลื่อนอัตโนมัติ</span>
+          </button>
+          <select id="select-scroll-speed" class="btn-sm" style="background: var(--bg-card-subtle); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 0.4rem; padding: 0.3rem 0.5rem; outline: none;">
+            <option value="1">ช้า (1x)</option>
+            <option value="1.8" selected>ปกติ (1.8x)</option>
+            <option value="2.8">เร็ว (2.8x)</option>
+          </select>
+        </div>
+        
+        <div style="display: flex; gap: 0.3rem;">
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-reader-edit-current" title="แก้ไขคำสวดบทนี้">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+            </svg>
+            <span>แก้คำสวด</span>
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="switchTab('setup')" title="กลับไปปรับลำดับ">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+            </svg>
+            <span>ปรับลำดับ</span>
+          </button>
+          <button type="button" id="btn-sequence-drawer" class="btn btn-secondary btn-sm" title="สารบัญบทสวด">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6"/>
+              <line x1="8" y1="12" x2="21" y2="12"/>
+              <line x1="8" y1="18" x2="21" y2="18"/>
+              <line x1="3" y1="6" x2="3.01" y2="6"/>
+              <line x1="3" y1="12" x2="3.01" y2="12"/>
+              <line x1="3" y1="18" x2="3.01" y2="18"/>
+            </svg>
+            <span>สารบัญ</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Prayer Reader Card -->
+      <div class="card" id="prayer-display-card">
+        <div style="text-align: center; margin-bottom: 1.25rem;">
+          <h2 id="reader-title" class="prayer-title">บทบูชาพระรัตนตรัย</h2>
+          <p id="reader-subtitle" class="prayer-subtitle">กราบไหว้และน้อมรำลึกถึงคุณพระรัตนตรัย</p>
+        </div>
+
+        <!-- Optional Repetition Counter -->
+        <div id="repetition-box" class="counter-widget" style="display: none;">
+          <div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">จำนวนรอบที่ตั้งไว้: <b id="target-reps-text">9</b> จบ</div>
+            <div style="font-size: 0.95rem; font-weight: bold; color: var(--text-gold);" id="current-rep-status">สวดไปแล้ว 0 / 9 จบ</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <button type="button" id="btn-reset-rep" class="btn btn-secondary btn-sm">รีเซ็ต</button>
+            <button type="button" id="btn-count-rep" class="counter-circle" title="แตะเพื่อนับจบ">+1</button>
+          </div>
+        </div>
+
+        <!-- Verses Container -->
+        <div id="reader-content" class="prayer-content">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons-row">
+          <button type="button" id="btn-prev-prayer" class="btn btn-secondary" style="flex: 1;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+            <span>บทก่อนหน้า</span>
+          </button>
+          <button type="button" id="btn-next-prayer" class="btn btn-primary" style="flex: 1.2;">
+            <span>บทถัดไป</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: LIBRARY (คลังบทสวดทั้งหมด) -->
+    <div id="tab-library" class="tab-screen">
+      <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="library-search" class="search-input" placeholder="ค้นหาบทสวดมนต์ในเครื่อง...">
+      </div>
+
+      <div class="category-pills" id="library-categories">
+        <button type="button" class="category-pill active" data-cat="all">ทั้งหมด</button>
+        <button type="button" class="category-pill" data-cat="intro">บทเริ่มต้น</button>
+        <button type="button" class="category-pill" data-cat="paritta">พระปริตร/ชัยมงคล</button>
+        <button type="button" class="category-pill" data-cat="sacred">พระคาถาสำคัญ</button>
+        <button type="button" class="category-pill" data-cat="metta">แผ่เมตตา/อุทิศบุญ</button>
+        <button type="button" class="category-pill" data-cat="custom">บทที่สร้างเอง</button>
+      </div>
+
+      <div id="library-list">
+        <!-- Rendered prayer cards -->
+      </div>
+    </div>
+
+    <!-- TAB 4: ONLINE SEARCH & ADD CUSTOM PRAYER -->
+    <div id="tab-online" class="tab-screen">
+      <!-- Network status bar -->
+      <div class="card" style="padding: 0.85rem 1.25rem; margin-bottom: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.9rem; font-weight: 600;">สถานะการเชื่อมต่อ:</span>
+          <span id="network-status" class="network-badge network-online">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: currentColor;"></span>
+            <span>ออนไลน์ (พร้อมค้นหา)</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Online Search Section -->
+      <div class="card">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-gold)" stroke-width="2">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+          </svg>
+          <h2 style="font-size: 1.1rem; color: var(--text-gold); font-weight: 700;">ค้นหาจากคลังบทสวดมนต์ออนไลน์</h2>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+          เมื่อมีอินเทอร์เน็ต สามารถค้นหาและดาวน์โหลดบทสวดมนต์เพิ่มเติมเข้าสู่คลังในเครื่องเพื่อใช้งานแบบออฟไลน์ได้ทันที
+        </p>
+
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input type="text" id="online-search-input" class="search-input" placeholder="พิมพ์ชื่อบทสวด เช่น ธัมมจัก, โพชฌังค, มหาเมตตา...">
+        </div>
+
+        <div id="online-results-list">
+          <!-- Online search results -->
+        </div>
+      </div>
+
+      <!-- Add Custom Prayer Form -->
+      <div class="card">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-gold)" stroke-width="2">
+            <path d="M12 5v14"/>
+            <path d="M5 12h14"/>
+          </svg>
+          <h2 style="font-size: 1.1rem; color: var(--text-gold); font-weight: 700;">เขียน/เพิ่มบทสวดด้วยตนเอง</h2>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+          เพิ่มบทสวดที่คุณต้องการเข้ามาในเครื่อง บันทึกและจัดลำดับได้ทันที
+        </p>
+
+        <form id="form-custom-prayer">
+          <label style="font-size: 0.85rem; font-weight: 600;">ชื่อบทสวด *</label>
+          <input type="text" id="custom-title" class="input-field" placeholder="เช่น คาถาบูชาดวงชะตา" required>
+
+          <label style="font-size: 0.85rem; font-weight: 600;">หมวดหมู่</label>
+          <select id="custom-category" class="input-field">
+            <option value="custom">บทสวดทั่วไป / กำหนดเอง</option>
+            <option value="sacred">พระคาถาศักดิ์สิทธิ์ / มหาลาภ</option>
+            <option value="paritta">พระปริตร / คุ้มครอง</option>
+            <option value="metta">แผ่เมตตา / ขอขมา</option>
+          </select>
+
+          <label style="font-size: 0.85rem; font-weight: 600;">คำสวดภาษาบาลี / บทสวดหลัก *</label>
+          <textarea id="custom-pali" class="input-field" placeholder="พิมพ์หรือวางบทสวดที่นี่..." required></textarea>
+
+          <label style="font-size: 0.85rem; font-weight: 600;">คำแปลภาษาไทย / คำอธิบาย (ถ้ามี)</label>
+          <textarea id="custom-thai" class="input-field" placeholder="คำแปลหรือความหมายของบทสวด..."></textarea>
+
+          <label style="font-size: 0.85rem; font-weight: 600;">จำนวนจบที่แนะนำ (เช่น 1, 3, 9, 108)</label>
+          <input type="number" id="custom-reps" class="input-field" value="1" min="1" max="1000">
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+              <polyline points="7 3 7 8 15 8"/>
+            </svg>
+            <span>บันทึกบทสวดเข้าคลัง</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Backup & Restore -->
+      <div class="card">
+        <h2 style="font-size: 1.1rem; color: var(--text-gold); font-weight: 700; margin-bottom: 0.5rem;">สำรองและกู้คืนข้อมูล</h2>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+          ส่งออกชุดบทสวดและบทสวดที่เพิ่มเองเป็นไฟล์สำรอง หรือนำเข้ามาใช้งานบนอุปกรณ์อื่น
+        </p>
+        <div style="display: flex; gap: 0.5rem;">
+          <button type="button" id="btn-export-backup" class="btn btn-secondary" style="flex: 1;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>ส่งออก (Backup)</span>
+          </button>
+          <label class="btn btn-secondary" style="flex: 1; cursor: pointer; text-align: center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <span>นำเข้า (Restore)</span>
+            <input type="file" id="input-import-backup" accept=".json" style="display: none;">
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- End container -->
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <button type="button" class="nav-item active" data-tab="setup">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="8" y1="6" x2="21" y2="6"/>
+        <line x1="8" y1="12" x2="21" y2="12"/>
+        <line x1="8" y1="18" x2="21" y2="18"/>
+        <line x1="3" y1="6" x2="3.01" y2="6"/>
+        <line x1="3" y1="12" x2="3.01" y2="12"/>
+        <line x1="3" y1="18" x2="3.01" y2="18"/>
+      </svg>
+      <span>จัดลำดับ/จำนวนจบ</span>
+    </button>
+    <button type="button" class="nav-item" data-tab="chant">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+      <span>เริ่มสวดมนต์</span>
+    </button>
+    <button type="button" class="nav-item" data-tab="library">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="18" height="18" x="3" y="3" rx="2"/>
+        <path d="M3 9h18"/>
+        <path d="M9 21V9"/>
+      </svg>
+      <span>คลังบทสวด</span>
+    </button>
+    <button type="button" class="nav-item" data-tab="online">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+        <path d="M2 12h20"/>
+      </svg>
+      <span>ค้นหา/เพิ่มบท</span>
+    </button>
+  </nav>
+
+  <!-- Modal: Select/Add Prayers into Active Sequence -->
+  <div id="modal-add-prayer-picker" class="modal-overlay">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+        <h3 style="color: var(--text-gold); font-size: 1.15rem; font-weight: bold;">+ เลือกบทสวดมนต์เข้าชุด</h3>
+        <button type="button" class="btn-icon btn-close-modal" style="width: 32px; height: 32px;">✕</button>
+      </div>
+
+      <div class="search-box" style="margin-bottom: 0.5rem;">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="modal-picker-search" class="search-input" placeholder="พิมพ์ชื่อบทสวดที่ต้องการค้นหา...">
+      </div>
+
+      <div id="modal-picker-list" style="max-height: 55vh; overflow-y: auto; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.75rem;">
+        <!-- Filled by JS -->
+      </div>
+
+      <button type="button" class="btn btn-primary btn-block btn-close-modal">
+        เสร็จสิ้น
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Prayer Content (ปรับแก้คำในบทสวด) -->
+  <div id="modal-edit-prayer" class="modal-overlay">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+        <h3 style="color: var(--text-gold); font-size: 1.15rem; font-weight: bold;">✏️ แก้ไขคำ/เนื้อหาบทสวด</h3>
+        <button type="button" class="btn-icon btn-close-modal" style="width: 32px; height: 32px;">✕</button>
+      </div>
+
+      <form id="form-edit-prayer">
+        <input type="hidden" id="edit-prayer-id">
+        
+        <label style="font-size: 0.85rem; font-weight: 600;">ชื่อบทสวด *</label>
+        <input type="text" id="edit-prayer-title" class="input-field" required>
+
+        <label style="font-size: 0.85rem; font-weight: 600;">คำอธิบายย่อ / ที่มา</label>
+        <input type="text" id="edit-prayer-subtitle" class="input-field">
+
+        <label style="font-size: 0.85rem; font-weight: 600;">จำนวนจบเริ่มต้น (เช่น 1, 3, 9, 108)</label>
+        <input type="number" id="edit-prayer-reps" class="input-field" min="1" max="1000">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.25rem;">
+          <label style="font-size: 0.85rem; font-weight: 600;">เนื้อหาบทสวด (คำสวดบาลีและคำแปล)</label>
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-add-edit-verse" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">+ เพิ่มท่อน</button>
+        </div>
+
+        <div id="edit-verses-container" style="max-height: 45vh; overflow-y: auto; margin-top: 0.5rem; margin-bottom: 1rem;">
+          <!-- Dynamically populated verse edit inputs -->
+        </div>
+
+        <div style="display: flex; gap: 0.4rem;">
+          <button type="button" class="btn btn-secondary" id="btn-reset-default-prayer" style="flex: 1; font-size: 0.82rem; display: none;">
+            🔄 คืนค่าเดิม
+          </button>
+          <button type="submit" class="btn btn-primary" style="flex: 1.5;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+            </svg>
+            <span>บันทึกการแก้ไข</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Drawer for Jump to Prayer in current sequence -->
+  <div id="modal-sequence-drawer" class="modal-overlay">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h3 style="color: var(--text-gold); font-size: 1.1rem; font-weight: bold;">เลือกบทสวดที่ต้องการข้ามไป</h3>
+        <button type="button" class="btn-icon btn-close-modal" style="width: 32px; height: 32px;">✕</button>
+      </div>
+      <div id="drawer-prayers-list" style="display: flex; flex-direction: column; gap: 0.4rem;">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: View Full Prayer Details -->
+  <div id="modal-prayer-details" class="modal-overlay">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+        <div>
+          <h3 id="modal-detail-title" style="color: var(--text-gold); font-size: 1.2rem; font-weight: bold;"></h3>
+          <p id="modal-detail-subtitle" style="font-size: 0.85rem; color: var(--text-muted);"></p>
+        </div>
+        <button type="button" class="btn-icon btn-close-modal" style="width: 32px; height: 32px;">✕</button>
+      </div>
+      <div id="modal-detail-content" class="prayer-content" style="max-height: 60vh; overflow-y: auto; margin-bottom: 1rem;">
+      </div>
+      <div style="display: flex; gap: 0.5rem;">
+        <button type="button" id="btn-modal-edit-prayer-direct" class="btn btn-secondary btn-sm" style="flex: 1;">
+          ✏️ แก้ไขคำสวด
+        </button>
+        <button type="button" id="btn-modal-add-to-active-seq" class="btn btn-primary btn-sm" style="flex: 1.5;">
+          <span>+ เพิ่มเข้าชุดสวดนี้</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="prayers.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

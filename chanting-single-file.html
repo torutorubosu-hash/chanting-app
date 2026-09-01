@@ -1,0 +1,2706 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>บทสวดมนต์จัดลำดับ - Chanting App</title>
+  
+  <!-- App Icons for Mobile & Desktop -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj4KICA8ZGVmcz4KICAgIDwhLS0gQmFja2dyb3VuZCBHcmFkaWVudCAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlMTUwYSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzBlMTMyMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwNzBhMTIiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CgogICAgPCEtLSBTdWJ0bGUgUmFkaWFsIEF1cmEgLS0+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImF1cmFHcmFkIiBjeD0iNTAlIiBjeT0iNTIlIiByPSI0NSUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZDk3NzA2IiBzdG9wLW9wYWNpdHk9IjAuMzUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNiNDUzMDkiIHN0b3Atb3BhY2l0eT0iMC4xMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KCiAgICA8IS0tIEdvbGQgR3JhZGllbnQgZm9yIFBldGFscyAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZEdyYWQiIHgxPSIwJSIgeTE9IjEwMCUiIHgyPSIwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q5NzcwNiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2Y1OWUwYiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWYzYzciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CgogICAgPCEtLSBMaWdodCBHb2xkIEFjY2VudCBHcmFkaWVudCAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGlnaHRHb2xkR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZiZWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmJiZjI0Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgoKICAgIDwhLS0gRHJvcCBTaGFkb3cgRmlsdGVyIC0tPgogICAgPGZpbHRlciBpZD0iZ29sZEdsb3ciIHg9Ii0yMCUiIHk9Ii0yMCUiIHdpZHRoPSIxNDAlIiBoZWlnaHQ9IjE0MCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI4IiByZXN1bHQ9ImJsdXIiLz4KICAgICAgPGZlQ29tcG9zaXRlIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImJsdXIiIG9wZXJhdG9yPSJvdmVyIi8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDwhLS0gQmFja2dyb3VuZCBDYW52YXMgd2l0aCBSb3VuZGVkIENvcm5lcnMgZm9yIEFwcCBJY29uIC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTE1IiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KICAKICA8IS0tIE91dGVyIFN1YnRsZSBHb2xkIEJvcmRlciAtLT4KICA8cmVjdCB3aWR0aD0iNTA0IiBoZWlnaHQ9IjUwNCIgeD0iNCIgeT0iNCIgcng9IjExMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2dvbGRHcmFkKSIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1vcGFjaXR5PSIwLjI1Ii8+CgogIDwhLS0gUmFkaWFudCBBdXJhIEdsb3cgQmVoaW5kIExvdHVzIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI2NSIgcj0iMjEwIiBmaWxsPSJ1cmwoI2F1cmFHcmFkKSIvPgoKICA8IS0tIE1pbmltYWxpc3QgWmVuIFJpbmcgKEhhbG8gb2YgTWluZGZ1bG5lc3MpIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI2NSIgcj0iMTQ1IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjZ29sZEdyYWQpIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1vcGFjaXR5PSIwLjM1IiBzdHJva2UtZGFzaGFycmF5PSIxNCA4Ii8+CgogIDwhLS0gVG9wIEZsYW1lIC8gRHJvcCBvZiBXaXNkb20gKOC4o+C4seC4qOC4oeC4teC4mOC4o+C4o+C4oSAvIOC4q+C4ouC4lOC4meC5ieC4s+C4hOC5ieC4suC4h+C4m+C4seC4jeC4jeC4sikgLS0+CiAgPHBhdGggZD0iTTI1NiwxMjggQzI2NiwxNTUgMjcyLDE3MCAyNzIsMTg1IEMyNzIsMTk4IDI2NSwyMDYgMjU2LDIwNiBDMjQ3LDIwNiAyNDAsMTk4IDI0MCwxODUgQzI0MCwxNzAgMjQ2LDE1NSAyNTYsMTI4IFoiIAogICAgICAgIGZpbGw9InVybCgjbGlnaHRHb2xkR3JhZCkiIAogICAgICAgIGZpbHRlcj0idXJsKCNnb2xkR2xvdykiLz4KCiAgPCEtLSBMb3R1cyBDZW50ZXIgU2VlZCBDb3JlIC0tPgogIDxlbGxpcHNlIGN4PSIyNTYiIGN5PSIyNzUiIHJ4PSI4IiByeT0iMTQiIGZpbGw9InVybCgjbGlnaHRHb2xkR3JhZCkiIG9wYWNpdHk9IjAuOSIvPgoKICA8IS0tIExvdHVzIENlbnRlciBNYWluIFBldGFsICjguIHguKXguLXguJrguIHguKXguLLguIfguKLguK3guJTguJrguLHguKcpIC0tPgogIDxwYXRoIGQ9Ik0yNTYsMTkwIEMyNzQsMjM1IDI4NSwyODUgMjU2LDMzNSBDMjI3LDI4NSAyMzgsMjM1IDI1NiwxOTAgWiIgCiAgICAgICAgZmlsbD0idXJsKCNnb2xkR3JhZCkiIAogICAgICAgIGZpbHRlcj0idXJsKCNnb2xkR2xvdykiLz4KCiAgPCEtLSBMZWZ0IElubmVyIFBldGFsICjguIHguKXguLXguJrguYPguJnguIvguYnguLLguKIpIC0tPgogIDxwYXRoIGQ9Ik0yNTYsMjIwIEMyMzAsMjQwIDE5NSwyNzUgMjA4LDMxOCBDMjI0LDMzMiAyNDUsMzM0IDI1NiwzMzUgQzI0NSwzMDAgMjQ4LDI1NSAyNTYsMjIwIFoiIAogICAgICAgIGZpbGw9InVybCgjZ29sZEdyYWQpIiAKICAgICAgICBvcGFjaXR5PSIwLjkyIi8+CgogIDwhLS0gUmlnaHQgSW5uZXIgUGV0YWwgKOC4geC4peC4teC4muC5g+C4meC4guC4p+C4sikgLS0+CiAgPHBhdGggZD0iTTI1NiwyMjAgQzI4MiwyNDAgMzE3LDI3NSAzMDQsMzE4IEMyODgsMzMyIDI2NywzMzQgMjU2LDMzNSBDMjY3LDMwMCAyNjQsMjU1IDI1NiwyMjAgWiIgCiAgICAgICAgZmlsbD0idXJsKCNnb2xkR3JhZCkiIAogICAgICAgIG9wYWNpdHk9IjAuOTIiLz4KCiAgPCEtLSBMZWZ0IE91dGVyIEdyYWNlZnVsIFBldGFsICjguIHguKXguLXguJrguJnguK3guIHguIvguYnguLLguKIpIC0tPgogIDxwYXRoIGQ9Ik0yNTAsMjYwIEMyMDUsMjcwIDE0OCwzMDUgMTYwLDM0NSBDMTkwLDM2MCAyMzAsMzQ4IDI1NCwzMzggQzIzMiwzMjAgMjM4LDI4NSAyNTAsMjYwIFoiIAogICAgICAgIGZpbGw9InVybCgjZ29sZEdyYWQpIiAKICAgICAgICBvcGFjaXR5PSIwLjgiLz4KCiAgPCEtLSBSaWdodCBPdXRlciBHcmFjZWZ1bCBQZXRhbCAo4LiB4Lil4Li14Lia4LiZ4Lit4LiB4LiC4Lin4LiyKSAtLT4KICA8cGF0aCBkPSJNMjYyLDI2MCBDMzA3LDI3MCAzNjQsMzA1IDM1MiwzNDUgQzMyMiwzNjAgMjgyLDM0OCAyNTgsMzM4IEMyODAsMzIwIDI3NCwyODUgMjYyLDI2MCBaIiAKICAgICAgICBmaWxsPSJ1cmwoI2dvbGRHcmFkKSIgCiAgICAgICAgb3BhY2l0eT0iMC44Ii8+CgogIDwhLS0gQm90dG9tIENhbHl4IEZvdW5kYXRpb24gKOC4kOC4suC4meC4muC4seC4pyAvIOC4geC4tOC5iOC4h+C4muC4h+C4geC4iikgLS0+CiAgPHBhdGggZD0iTTIwMCwzNTIgQzIzNiwzNjggMjc2LDM2OCAzMTIsMzUyIEMyODUsMzcyIDIyNywzNzIgMjAwLDM1MiBaIiAKICAgICAgICBmaWxsPSJ1cmwoI2xpZ2h0R29sZEdyYWQpIiAKICAgICAgICBvcGFjaXR5PSIwLjg1Ii8+CgogIDwhLS0gMyBTYWNyZWQgRG90cyBvZiBCdWRkaGlzdCBUcmlwbGUgR2VtICjguJ7guKPguLDguKPguLHguJXguJnguJXguKPguLHguKIg4Lie4Lij4Liw4Lie4Li44LiX4LiYIOC4nuC4o+C4sOC4mOC4o+C4o+C4oSDguJ7guKPguLDguKrguIfguIbguYwpIC0tPgogIDxjaXJjbGUgY3g9IjIzNiIgY3k9IjM5MiIgcj0iNSIgZmlsbD0idXJsKCNsaWdodEdvbGRHcmFkKSIgb3BhY2l0eT0iMC43NSIvPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjM5NiIgcj0iNiIgZmlsbD0idXJsKCNsaWdodEdvbGRHcmFkKSIgb3BhY2l0eT0iMC45NSIvPgogIDxjaXJjbGUgY3g9IjI3NiIgY3k9IjM5MiIgcj0iNSIgZmlsbD0idXJsKCNsaWdodEdvbGRHcmFkKSIgb3BhY2l0eT0iMC43NSIvPgo8L3N2Zz4K">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj4KICA8ZGVmcz4KICAgIDwhLS0gQmFja2dyb3VuZCBHcmFkaWVudCAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlMTUwYSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzBlMTMyMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwNzBhMTIiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CgogICAgPCEtLSBTdWJ0bGUgUmFkaWFsIEF1cmEgLS0+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImF1cmFHcmFkIiBjeD0iNTAlIiBjeT0iNTIlIiByPSI0NSUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZDk3NzA2IiBzdG9wLW9wYWNpdHk9IjAuMzUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNiNDUzMDkiIHN0b3Atb3BhY2l0eT0iMC4xMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KCiAgICA8IS0tIEdvbGQgR3JhZGllbnQgZm9yIFBldGFscyAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZEdyYWQiIHgxPSIwJSIgeTE9IjEwMCUiIHgyPSIwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q5NzcwNiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2Y1OWUwYiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWYzYzciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CgogICAgPCEtLSBMaWdodCBHb2xkIEFjY2VudCBHcmFkaWVudCAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGlnaHRHb2xkR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZiZWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmJiZjI0Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgoKICAgIDwhLS0gRHJvcCBTaGFkb3cgRmlsdGVyIC0tPgogICAgPGZpbHRlciBpZD0iZ29sZEdsb3ciIHg9Ii0yMCUiIHk9Ii0yMCUiIHdpZHRoPSIxNDAlIiBoZWlnaHQ9IjE0MCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI4IiByZXN1bHQ9ImJsdXIiLz4KICAgICAgPGZlQ29tcG9zaXRlIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImJsdXIiIG9wZXJhdG9yPSJvdmVyIi8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDwhLS0gQmFja2dyb3VuZCBDYW52YXMgd2l0aCBSb3VuZGVkIENvcm5lcnMgZm9yIEFwcCBJY29uIC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTE1IiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KICAKICA8IS0tIE91dGVyIFN1YnRsZSBHb2xkIEJvcmRlciAtLT4KICA8cmVjdCB3aWR0aD0iNTA0IiBoZWlnaHQ9IjUwNCIgeD0iNCIgeT0iNCIgcng9IjExMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2dvbGRHcmFkKSIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1vcGFjaXR5PSIwLjI1Ii8+CgogIDwhLS0gUmFkaWFudCBBdXJhIEdsb3cgQmVoaW5kIExvdHVzIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI2NSIgcj0iMjEwIiBmaWxsPSJ1cmwoI2F1cmFHcmFkKSIvPgoKICA8IS0tIE1pbmltYWxpc3QgWmVuIFJpbmcgKEhhbG8gb2YgTWluZGZ1bG5lc3MpIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI2NSIgcj0iMTQ1IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjZ29sZEdyYWQpIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1vcGFjaXR5PSIwLjM1IiBzdHJva2UtZGFzaGFycmF5PSIxNCA4Ii8+CgogIDwhLS0gVG9wIEZsYW1lIC8gRHJvcCBvZiBXaXNkb20gKOC4o+C4seC4qOC4oeC4teC4mOC4o+C4o+C4oSAvIOC4q+C4ouC4lOC4meC5ieC4s+C4hOC5ieC4suC4h+C4m+C4seC4jeC4jeC4sikgLS0+CiAgPHBhdGggZD0iTTI1NiwxMjggQzI2NiwxNTUgMjcyLDE3MCAyNzIsMTg1IEMyNzIsMTk4IDI2NSwyMDYgMjU2LDIwNiBDMjQ3LDIwNiAyNDAsMTk4IDI0MCwxODUgQzI0MCwxNzAgMjQ2LDE1NSAyNTYsMTI4IFoiIAogICAgICAgIGZpbGw9InVybCgjbGlnaHRHb2xkR3JhZCkiIAogICAgICAgIGZpbHRlcj0idXJsKCNnb2xkR2xvdykiLz4KCiAgPCEtLSBMb3R1cyBDZW50ZXIgU2VlZCBDb3JlIC0tPgogIDxlbGxpcHNlIGN4PSIyNTYiIGN5PSIyNzUiIHJ4PSI4IiByeT0iMTQiIGZpbGw9InVybCgjbGlnaHRHb2xkR3JhZCkiIG9wYWNpdHk9IjAuOSIvPgoKICA8IS0tIExvdHVzIENlbnRlciBNYWluIFBldGFsICjguIHguKXguLXguJrguIHguKXguLLguIfguKLguK3guJTguJrguLHguKcpIC0tPgogIDxwYXRoIGQ9Ik0yNTYsMTkwIEMyNzQsMjM1IDI4NSwyODUgMjU2LDMzNSBDMjI3LDI4NSAyMzgsMjM1IDI1NiwxOTAgWiIgCiAgICAgICAgZmlsbD0idXJsKCNnb2xkR3JhZCkiIAogICAgICAgIGZpbHRlcj0idXJsKCNnb2xkR2xvdykiLz4KCiAgPCEtLSBMZWZ0IElubmVyIFBldGFsICjguIHguKXguLXguJrguYPguJnguIvguYnguLLguKIpIC0tPgogIDxwYXRoIGQ9Ik0yNTYsMjIwIEMyMzAsMjQwIDE5NSwyNzUgMjA4LDMxOCBDMjI0LDMzMiAyNDUsMzM0IDI1NiwzMzUgQzI0NSwzMDAgMjQ4LDI1NSAyNTYsMjIwIFoiIAogICAgICAgIGZpbGw9InVybCgjZ29sZEdyYWQpIiAKICAgICAgICBvcGFjaXR5PSIwLjkyIi8+CgogIDwhLS0gUmlnaHQgSW5uZXIgUGV0YWwgKOC4geC4peC4teC4muC5g+C4meC4guC4p+C4sikgLS0+CiAgPHBhdGggZD0iTTI1NiwyMjAgQzI4MiwyNDAgMzE3LDI3NSAzMDQsMzE4IEMyODgsMzMyIDI2NywzMzQgMjU2LDMzNSBDMjY3LDMwMCAyNjQsMjU1IDI1NiwyMjAgWiIgCiAgICAgICAgZmlsbD0idXJsKCNnb2xkR3JhZCkiIAogICAgICAgIG9wYWNpdHk9IjAuOTIiLz4KCiAgPCEtLSBMZWZ0IE91dGVyIEdyYWNlZnVsIFBldGFsICjguIHguKXguLXguJrguJnguK3guIHguIvguYnguLLguKIpIC0tPgogIDxwYXRoIGQ9Ik0yNTAsMjYwIEMyMDUsMjcwIDE0OCwzMDUgMTYwLDM0NSBDMTkwLDM2MCAyMzAsMzQ4IDI1NCwzMzggQzIzMiwzMjAgMjM4LDI4NSAyNTAsMjYwIFoiIAogICAgICAgIGZpbGw9InVybCgjZ29sZEdyYWQpIiAKICAgICAgICBvcGFjaXR5PSIwLjgiLz4KCiAgPCEtLSBSaWdodCBPdXRlciBHcmFjZWZ1bCBQZXRhbCAo4LiB4Lil4Li14Lia4LiZ4Lit4LiB4LiC4Lin4LiyKSAtLT4KICA8cGF0aCBkPSJNMjYyLDI2MCBDMzA3LDI3MCAzNjQsMzA1IDM1MiwzNDUgQzMyMiwzNjAgMjgyLDM0OCAyNTgsMzM4IEMyODAsMzIwIDI3NCwyODUgMjYyLDI2MCBaIiAKICAgICAgICBmaWxsPSJ1cmwoI2dvbGRHcmFkKSIgCiAgICAgICAgb3BhY2l0eT0iMC44Ii8+CgogIDwhLS0gQm90dG9tIENhbHl4IEZvdW5kYXRpb24gKOC4kOC4suC4meC4muC4seC4pyAvIOC4geC4tOC5iOC4h+C4muC4h+C4geC4iikgLS0+CiAgPHBhdGggZD0iTTIwMCwzNTIgQzIzNiwzNjggMjc2LDM2OCAzMTIsMzUyIEMyODUsMzcyIDIyNywzNzIgMjAwLDM1MiBaIiAKICAgICAgICBmaWxsPSJ1cmwoI2xpZ2h0R29sZEdyYWQpIiAKICAgICAgICBvcGFjaXR5PSIwLjg1Ii8+CgogIDwhLS0gMyBTYWNyZWQgRG90cyBvZiBCdWRkaGlzdCBUcmlwbGUgR2VtICjguJ7guKPguLDguKPguLHguJXguJnguJXguKPguLHguKIg4Lie4Lij4Liw4Lie4Li44LiX4LiYIOC4nuC4o+C4sOC4mOC4o+C4o+C4oSDguJ7guKPguLDguKrguIfguIbguYwpIC0tPgogIDxjaXJjbGUgY3g9IjIzNiIgY3k9IjM5MiIgcj0iNSIgZmlsbD0idXJsKCNsaWdodEdvbGRHcmFkKSIgb3BhY2l0eT0iMC43NSIvPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjM5NiIgcj0iNiIgZmlsbD0idXJsKCNsaWdodEdvbGRHcmFkKSIgb3BhY2l0eT0iMC45NSIvPgogIDxjaXJjbGUgY3g9IjI3NiIgY3k9IjM5MiIgcj0iNSIgZmlsbD0idXJsKCNsaWdodEdvbGRHcmFkKSIgb3BhY2l0eT0iMC43NSIvPgo8L3N2Zz4K">
+  <meta name="theme-color" content="#d97706">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="บทสวดมนต์">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <style>
+    :root {
+      --bg-main: #0b0f19;
+      --bg-card: #151d2e;
+      --bg-card-subtle: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-gold: #fbbf24;
+      --gold-primary: #d97706;
+      --gold-hover: #b45309;
+      --gold-light: rgba(217, 119, 6, 0.15);
+      --border-color: #243049;
+      --nav-bg: rgba(11, 15, 25, 0.95);
+      --font-scale: 1.0;
+    }
+
+    [data-theme="light"] {
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-subtle: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-gold: #b45309;
+      --gold-primary: #d97706;
+      --gold-hover: #92400e;
+      --gold-light: rgba(217, 119, 6, 0.1);
+      --border-color: #e2e8f0;
+      --nav-bg: rgba(255, 255, 255, 0.95);
+    }
+
+    [data-theme="sepia"] {
+      --bg-main: #fcf8ec;
+      --bg-card: #f5eedb;
+      --bg-card-subtle: #ece2c8;
+      --text-main: #3d2c1d;
+      --text-muted: #7c6853;
+      --text-gold: #934c0e;
+      --gold-primary: #b45309;
+      --gold-hover: #78350f;
+      --gold-light: rgba(180, 83, 9, 0.12);
+      --border-color: #dfd4b8;
+      --nav-bg: rgba(252, 248, 236, 0.95);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Sarabun', 'Noto Sans Thai', 'Prompt', 'Leelawadee UI', sans-serif;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 1rem;
+      padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+      flex: 1;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: var(--nav-bg);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-gold);
+    }
+
+    .header-logo-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      vertical-align: middle;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-icon {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-icon:active {
+      transform: scale(0.92);
+      background-color: var(--gold-light);
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-around;
+      padding: 0.5rem 0.25rem max(0.5rem, env(safe-area-inset-bottom, 0.5rem));
+      z-index: 40;
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      padding: 0.4rem 0.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex: 1;
+    }
+
+    .nav-item.active {
+      color: var(--text-gold);
+      font-weight: 600;
+    }
+
+    .nav-item svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* Cards & Components */
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background-color: var(--gold-light);
+      color: var(--text-gold);
+    }
+
+    .badge-secondary {
+      background-color: var(--bg-card-subtle);
+      color: var(--text-muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background-color: var(--gold-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+    }
+
+    .btn-primary:active {
+      background-color: var(--gold-hover);
+      transform: scale(0.97);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-card-subtle);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .btn-sm {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.82rem;
+      border-radius: 0.5rem;
+    }
+
+    /* Sequence Item Card in Unified List */
+    .sequence-item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.65rem;
+      transition: all 0.15s ease;
+    }
+
+    .sequence-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sequence-item-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.45rem;
+      border-top: 1px dashed var(--border-color);
+      margin-top: 0.45rem;
+      gap: 0.5rem;
+    }
+
+    /* Repetition Stepper */
+    .rep-stepper {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 0.15rem;
+    }
+
+    .rep-stepper-btn {
+      background: none;
+      border: none;
+      color: var(--text-main);
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 0.35rem;
+      font-size: 1rem;
+    }
+
+    .rep-stepper-btn:active {
+      background: var(--gold-light);
+      color: var(--text-gold);
+    }
+
+    .rep-stepper-value {
+      padding: 0 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-gold);
+      min-width: 50px;
+      text-align: center;
+    }
+
+    .item-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .btn-action-sm {
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 32px;
+      height: 32px;
+      border-radius: 0.4rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .btn-action-sm:active {
+      background-color: var(--gold-light);
+    }
+
+    /* Reader View */
+    .chant-header {
+      text-align: center;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .chant-progress-bar {
+      height: 6px;
+      width: 100%;
+      background: var(--bg-card-subtle);
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+
+    .chant-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #d97706, #fbbf24);
+      transition: width 0.3s ease;
+    }
+
+    .prayer-title {
+      font-size: calc(1.35rem * var(--font-scale));
+      font-weight: 700;
+      color: var(--text-gold);
+      margin-bottom: 0.35rem;
+      line-height: 1.4;
+    }
+
+    .prayer-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .prayer-content {
+      font-size: calc(1.15rem * var(--font-scale));
+      line-height: 1.95;
+    }
+
+    .verse-block {
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .verse-block:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .pali-verse {
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .thai-meaning {
+      color: var(--text-muted);
+      font-size: 0.9em;
+      padding-left: 0.75rem;
+      border-left: 3px solid var(--gold-primary);
+      line-height: 1.65;
+    }
+
+    /* Counter Widget in Chanting View */
+    .counter-widget {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-card-subtle);
+      border-radius: 0.85rem;
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+    }
+
+    .counter-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d97706, #f59e0b);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+      transition: transform 0.1s;
+      border: none;
+    }
+
+    .counter-circle:active {
+      transform: scale(0.9);
+    }
+
+    /* Auto Scroll Controls */
+    .auto-scroll-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Search & Inputs */
+    .search-box {
+      position: relative;
+      margin-bottom: 0.75rem;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.75rem 1rem 0.75rem 2.6rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+
+    .category-pills {
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+      padding-bottom: 0.6rem;
+      margin-bottom: 0.75rem;
+      scrollbar-width: none;
+    }
+
+    .category-pill {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .category-pill.active {
+      background: var(--gold-primary);
+      color: #fff;
+      border-color: var(--gold-primary);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 60;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      width: 100%;
+      max-width: 560px;
+      max-height: 88vh;
+      max-height: 88dvh;
+      overflow-y: auto;
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .input-field {
+      width: 100%;
+      background: var(--bg-main);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.65rem 0.85rem;
+      border-radius: 0.5rem;
+      margin-top: 0.35rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    textarea.input-field {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .network-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-weight: 500;
+    }
+
+    .network-online {
+      background: rgba(34, 197, 94, 0.15);
+      color: #22c55e;
+    }
+
+    .network-offline {
+      background: rgba(148, 163, 184, 0.15);
+      color: var(--text-muted);
+    }
+
+    .nav-buttons-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tab-screen {
+      display: none;
+    }
+
+    .tab-screen.active {
+      display: block;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-logo">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj4KICA8ZGVmcz4KICAgIDwhLS0gQmFja2dyb3VuZCBHcmFkaWVudCAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlMTUwYSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzBlMTMyMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwNzBhMTIiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CgogICAgPCEtLSBTdWJ0bGUgUmFkaWFsIEF1cmEgLS0+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImF1cmFHcmFkIiBjeD0iNTAlIiBjeT0iNTIlIiByPSI0NSUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZDk3NzA2IiBzdG9wLW9wYWNpdHk9IjAuMzUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiNiNDUzMDkiIHN0b3Atb3BhY2l0eT0iMC4xMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KCiAgICA8IS0tIEdvbGQgR3JhZGllbnQgZm9yIFBldGFscyAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZEdyYWQiIHgxPSIwJSIgeTE9IjEwMCUiIHgyPSIwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q5NzcwNiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2Y1OWUwYiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWYzYzciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CgogICAgPCEtLSBMaWdodCBHb2xkIEFjY2VudCBHcmFkaWVudCAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGlnaHRHb2xkR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZiZWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmJiZjI0Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgoKICAgIDwhLS0gRHJvcCBTaGFkb3cgRmlsdGVyIC0tPgogICAgPGZpbHRlciBpZD0iZ29sZEdsb3ciIHg9Ii0yMCUiIHk9Ii0yMCUiIHdpZHRoPSIxNDAlIiBoZWlnaHQ9IjE0MCUiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI4IiByZXN1bHQ9ImJsdXIiLz4KICAgICAgPGZlQ29tcG9zaXRlIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImJsdXIiIG9wZXJhdG9yPSJvdmVyIi8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDwhLS0gQmFja2dyb3VuZCBDYW52YXMgd2l0aCBSb3VuZGVkIENvcm5lcnMgZm9yIEFwcCBJY29uIC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTE1IiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KICAKICA8IS0tIE91dGVyIFN1YnRsZSBHb2xkIEJvcmRlciAtLT4KICA8cmVjdCB3aWR0aD0iNTA0IiBoZWlnaHQ9IjUwNCIgeD0iNCIgeT0iNCIgcng9IjExMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2dvbGRHcmFkKSIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1vcGFjaXR5PSIwLjI1Ii8+CgogIDwhLS0gUmFkaWFudCBBdXJhIEdsb3cgQmVoaW5kIExvdHVzIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI2NSIgcj0iMjEwIiBmaWxsPSJ1cmwoI2F1cmFHcmFkKSIvPgoKICA8IS0tIE1pbmltYWxpc3QgWmVuIFJpbmcgKEhhbG8gb2YgTWluZGZ1bG5lc3MpIC0tPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjI2NSIgcj0iMTQ1IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjZ29sZEdyYWQpIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1vcGFjaXR5PSIwLjM1IiBzdHJva2UtZGFzaGFycmF5PSIxNCA4Ii8+CgogIDwhLS0gVG9wIEZsYW1lIC8gRHJvcCBvZiBXaXNkb20gKOC4o+C4seC4qOC4oeC4teC4mOC4o+C4o+C4oSAvIOC4q+C4ouC4lOC4meC5ieC4s+C4hOC5ieC4suC4h+C4m+C4seC4jeC4jeC4sikgLS0+CiAgPHBhdGggZD0iTTI1NiwxMjggQzI2NiwxNTUgMjcyLDE3MCAyNzIsMTg1IEMyNzIsMTk4IDI2NSwyMDYgMjU2LDIwNiBDMjQ3LDIwNiAyNDAsMTk4IDI0MCwxODUgQzI0MCwxNzAgMjQ2LDE1NSAyNTYsMTI4IFoiIAogICAgICAgIGZpbGw9InVybCgjbGlnaHRHb2xkR3JhZCkiIAogICAgICAgIGZpbHRlcj0idXJsKCNnb2xkR2xvdykiLz4KCiAgPCEtLSBMb3R1cyBDZW50ZXIgU2VlZCBDb3JlIC0tPgogIDxlbGxpcHNlIGN4PSIyNTYiIGN5PSIyNzUiIHJ4PSI4IiByeT0iMTQiIGZpbGw9InVybCgjbGlnaHRHb2xkR3JhZCkiIG9wYWNpdHk9IjAuOSIvPgoKICA8IS0tIExvdHVzIENlbnRlciBNYWluIFBldGFsICjguIHguKXguLXguJrguIHguKXguLLguIfguKLguK3guJTguJrguLHguKcpIC0tPgogIDxwYXRoIGQ9Ik0yNTYsMTkwIEMyNzQsMjM1IDI4NSwyODUgMjU2LDMzNSBDMjI3LDI4NSAyMzgsMjM1IDI1NiwxOTAgWiIgCiAgICAgICAgZmlsbD0idXJsKCNnb2xkR3JhZCkiIAogICAgICAgIGZpbHRlcj0idXJsKCNnb2xkR2xvdykiLz4KCiAgPCEtLSBMZWZ0IElubmVyIFBldGFsICjguIHguKXguLXguJrguYPguJnguIvguYnguLLguKIpIC0tPgogIDxwYXRoIGQ9Ik0yNTYsMjIwIEMyMzAsMjQwIDE5NSwyNzUgMjA4LDMxOCBDMjI0LDMzMiAyNDUsMzM0IDI1NiwzMzUgQzI0NSwzMDAgMjQ4LDI1NSAyNTYsMjIwIFoiIAogICAgICAgIGZpbGw9InVybCgjZ29sZEdyYWQpIiAKICAgICAgICBvcGFjaXR5PSIwLjkyIi8+CgogIDwhLS0gUmlnaHQgSW5uZXIgUGV0YWwgKOC4geC4peC4teC4muC5g+C4meC4guC4p+C4sikgLS0+CiAgPHBhdGggZD0iTTI1NiwyMjAgQzI4MiwyNDAgMzE3LDI3NSAzMDQsMzE4IEMyODgsMzMyIDI2NywzMzQgMjU2LDMzNSBDMjY3LDMwMCAyNjQsMjU1IDI1NiwyMjAgWiIgCiAgICAgICAgZmlsbD0idXJsKCNnb2xkR3JhZCkiIAogICAgICAgIG9wYWNpdHk9IjAuOTIiLz4KCiAgPCEtLSBMZWZ0IE91dGVyIEdyYWNlZnVsIFBldGFsICjguIHguKXguLXguJrguJnguK3guIHguIvguYnguLLguKIpIC0tPgogIDxwYXRoIGQ9Ik0yNTAsMjYwIEMyMDUsMjcwIDE0OCwzMDUgMTYwLDM0NSBDMTkwLDM2MCAyMzAsMzQ4IDI1NCwzMzggQzIzMiwzMjAgMjM4LDI4NSAyNTAsMjYwIFoiIAogICAgICAgIGZpbGw9InVybCgjZ29sZEdyYWQpIiAKICAgICAgICBvcGFjaXR5PSIwLjgiLz4KCiAgPCEtLSBSaWdodCBPdXRlciBHcmFjZWZ1bCBQZXRhbCAo4LiB4Lil4Li14Lia4LiZ4Lit4LiB4LiC4Lin4LiyKSAtLT4KICA8cGF0aCBkPSJNMjYyLDI2MCBDMzA3LDI3MCAzNjQsMzA1IDM1MiwzNDUgQzMyMiwzNjAgMjgyLDM0OCAyNTgsMzM4IEMyODAsMzIwIDI3NCwyODUgMjYyLDI2MCBaIiAKICAgICAgICBmaWxsPSJ1cmwoI2dvbGRHcmFkKSIgCiAgICAgICAgb3BhY2l0eT0iMC44Ii8+CgogIDwhLS0gQm90dG9tIENhbHl4IEZvdW5kYXRpb24gKOC4kOC4suC4meC4muC4seC4pyAvIOC4geC4tOC5iOC4h+C4muC4h+C4geC4iikgLS0+CiAgPHBhdGggZD0iTTIwMCwzNTIgQzIzNiwzNjggMjc2LDM2OCAzMTIsMzUyIEMyODUsMzcyIDIyNywzNzIgMjAwLDM1MiBaIiAKICAgICAgICBmaWxsPSJ1cmwoI2xpZ2h0R29sZEdyYWQpIiAKICAgICAgICBvcGFjaXR5PSIwLjg1Ii8+CgogIDwhLS0gMyBTYWNyZWQgRG90cyBvZiBCdWRkaGlzdCBUcmlwbGUgR2VtICjguJ7guKPguLDguKPguLHguJXguJnguJXguKPguLHguKIg4Lie4Lij4Liw4Lie4Li44LiX4LiYIOC4nuC4o+C4sOC4mOC4o+C4o+C4oSDguJ7guKPguLDguKrguIfguIbguYwpIC0tPgogIDxjaXJjbGUgY3g9IjIzNiIgY3k9IjM5MiIgcj0iNSIgZmlsbD0idXJsKCNsaWdodEdvbGRHcmFkKSIgb3BhY2l0eT0iMC43NSIvPgogIDxjaXJjbGUgY3g9IjI1NiIgY3k9IjM5NiIgcj0iNiIgZmlsbD0idXJsKCNsaWdodEdvbGRHcmFkKSIgb3BhY2l0eT0iMC45NSIvPgogIDxjaXJjbGUgY3g9IjI3NiIgY3k9IjM5MiIgcj0iNSIgZmlsbD0idXJsKCNsaWdodEdvbGRHcmFkKSIgb3BhY2l0eT0iMC43NSIvPgo8L3N2Zz4K" alt="Icon" class="header-logo-icon">
+      <span>บทสวดมนต์</span>
+    </div>
+    <div class="header-controls">
+      <button type="button" class="btn-icon" id="btn-bell" title="สั่นกระดิ่ง/ระฆัง">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+          <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+        </svg>
+      </button>
+      <button type="button" class="btn-icon" id="btn-font-dec" title="ลดขนาดตัวอักษร">A-</button>
+      <button type="button" class="btn-icon" id="btn-font-inc" title="เพิ่มขนาดตัวอักษร">A+</button>
+      <button type="button" class="btn-icon" id="btn-theme" title="เปลี่ยนธีม สีพื้นหลัง">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2"/>
+          <path d="M12 20v2"/>
+          <path d="m4.93 4.93 1.41 1.41"/>
+          <path d="m17.66 17.66 1.41 1.41"/>
+          <path d="M2 12h2"/>
+          <path d="M20 12h2"/>
+          <path d="m6.34 17.66-1.41 1.41"/>
+          <path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- TAB 1: UNIFIED SETUP & REORDER SCREEN (หน้าเลือกและจัดลำดับบทสวด + ตั้งจำนวนจบ) -->
+    <div id="tab-setup" class="tab-screen active">
+
+      <!-- Preset & Action Bar Card -->
+      <div class="card" style="padding: 1rem 1.15rem; margin-bottom: 0.85rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+          <h2 style="font-size: 1.05rem; font-weight: 700; color: var(--text-gold);">เลือกชุดบทสวดมนต์:</h2>
+          <span class="badge" id="setup-total-badge">0 บท</span>
+        </div>
+        <select id="select-active-preset" class="input-field" style="margin-bottom: 0.6rem;">
+          <!-- Populated by JS -->
+        </select>
+
+        <div style="display: flex; gap: 0.4rem;">
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-open-add-prayer-modal" style="flex: 1.2;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            <span>+ เพิ่มบทสวดเข้าชุด</span>
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-save-as-new-seq" style="flex: 1;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+            </svg>
+            <span>บันทึกชุดนี้</span>
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-clear-all-seq" style="flex: 0.7; color: #ef4444;" title="ล้างทั้งหมด">
+            ล้าง
+          </button>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; padding: 0 0.25rem;">
+        <span style="font-size: 0.88rem; font-weight: 600; color: var(--text-muted);">ลำดับการสวดมนต์ & จำนวนจบ:</span>
+        <span id="setup-total-reps-summary" style="font-size: 0.8rem; color: var(--text-gold);"></span>
+      </div>
+
+      <!-- Unified Sequence Items List -->
+      <div id="unified-sequence-list">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Quick Add Section Button (Bottom of list) -->
+      <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+        <button type="button" class="btn btn-secondary btn-block" onclick="openAddPrayerModal()" style="border-style: dashed; padding: 0.75rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          <span>แตะเพื่อเลือกเพิ่มบทสวดมนต์อื่นๆ จากคลัง</span>
+        </button>
+      </div>
+
+      <!-- Sticky Start Chanting Button -->
+      <div style="position: sticky; bottom: 4.5rem; z-index: 30; padding-top: 0.5rem;">
+        <button type="button" id="btn-start-chanting-main" class="btn btn-primary btn-block" style="padding: 0.85rem 1.25rem; font-size: 1.08rem; box-shadow: 0 6px 18px rgba(217, 119, 6, 0.45);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          <span>เริ่มสวดมนต์ตามลำดับ 🙏</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- TAB 2: CHANTING READER SCREEN (หน้าโหมดอ่านสวดมนต์) -->
+    <div id="tab-chant" class="tab-screen">
+      <div class="chant-header">
+        <div class="chant-progress-bar">
+          <div id="chant-progress-fill" class="chant-progress-fill" style="width: 10%;"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <span id="chant-sequence-name" class="badge">ชุดสวดมนต์</span>
+          <span id="chant-step-indicator" style="font-size: 0.8rem; color: var(--text-muted);">บทที่ 1 / 1</span>
+        </div>
+      </div>
+
+      <!-- Auto scroll & Quick Control Bar -->
+      <div class="auto-scroll-bar">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <button type="button" id="btn-autoscroll" class="btn btn-secondary btn-sm" style="display: flex; align-items: center; gap: 0.3rem;">
+            <svg id="icon-scroll-play" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span id="label-autoscroll">เลื่อนอัตโนมัติ</span>
+          </button>
+          <select id="select-scroll-speed" class="btn-sm" style="background: var(--bg-card-subtle); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 0.4rem; padding: 0.3rem 0.5rem; outline: none;">
+            <option value="1">ช้า (1x)</option>
+            <option value="1.8" selected>ปกติ (1.8x)</option>
+            <option value="2.8">เร็ว (2.8x)</option>
+          </select>
+        </div>
+        
+        <div style="display: flex; gap: 0.3rem;">
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-reader-edit-current" title="แก้ไขคำสวดบทนี้">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+            </svg>
+            <span>แก้คำสวด</span>
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="switchTab('setup')" title="กลับไปปรับลำดับ">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+            </svg>
+            <span>ปรับลำดับ</span>
+          </button>
+          <button type="button" id="btn-sequence-drawer" class="btn btn-secondary btn-sm" title="สารบัญบทสวด">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6"/>
+              <line x1="8" y1="12" x2="21" y2="12"/>
+              <line x1="8" y1="18" x2="21" y2="18"/>
+              <line x1="3" y1="6" x2="3.01" y2="6"/>
+              <line x1="3" y1="12" x2="3.01" y2="12"/>
+              <line x1="3" y1="18" x2="3.01" y2="18"/>
+            </svg>
+            <span>สารบัญ</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Prayer Reader Card -->
+      <div class="card" id="prayer-display-card">
+        <div style="text-align: center; margin-bottom: 1.25rem;">
+          <h2 id="reader-title" class="prayer-title">บทบูชาพระรัตนตรัย</h2>
+          <p id="reader-subtitle" class="prayer-subtitle">กราบไหว้และน้อมรำลึกถึงคุณพระรัตนตรัย</p>
+        </div>
+
+        <!-- Optional Repetition Counter -->
+        <div id="repetition-box" class="counter-widget" style="display: none;">
+          <div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">จำนวนรอบที่ตั้งไว้: <b id="target-reps-text">9</b> จบ</div>
+            <div style="font-size: 0.95rem; font-weight: bold; color: var(--text-gold);" id="current-rep-status">สวดไปแล้ว 0 / 9 จบ</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <button type="button" id="btn-reset-rep" class="btn btn-secondary btn-sm">รีเซ็ต</button>
+            <button type="button" id="btn-count-rep" class="counter-circle" title="แตะเพื่อนับจบ">+1</button>
+          </div>
+        </div>
+
+        <!-- Verses Container -->
+        <div id="reader-content" class="prayer-content">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons-row">
+          <button type="button" id="btn-prev-prayer" class="btn btn-secondary" style="flex: 1;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+            <span>บทก่อนหน้า</span>
+          </button>
+          <button type="button" id="btn-next-prayer" class="btn btn-primary" style="flex: 1.2;">
+            <span>บทถัดไป</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: LIBRARY (คลังบทสวดทั้งหมด) -->
+    <div id="tab-library" class="tab-screen">
+      <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="library-search" class="search-input" placeholder="ค้นหาบทสวดมนต์ในเครื่อง...">
+      </div>
+
+      <div class="category-pills" id="library-categories">
+        <button type="button" class="category-pill active" data-cat="all">ทั้งหมด</button>
+        <button type="button" class="category-pill" data-cat="intro">บทเริ่มต้น</button>
+        <button type="button" class="category-pill" data-cat="paritta">พระปริตร/ชัยมงคล</button>
+        <button type="button" class="category-pill" data-cat="sacred">พระคาถาสำคัญ</button>
+        <button type="button" class="category-pill" data-cat="metta">แผ่เมตตา/อุทิศบุญ</button>
+        <button type="button" class="category-pill" data-cat="custom">บทที่สร้างเอง</button>
+      </div>
+
+      <div id="library-list">
+        <!-- Rendered prayer cards -->
+      </div>
+    </div>
+
+    <!-- TAB 4: ONLINE SEARCH & ADD CUSTOM PRAYER -->
+    <div id="tab-online" class="tab-screen">
+      <!-- Network status bar -->
+      <div class="card" style="padding: 0.85rem 1.25rem; margin-bottom: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.9rem; font-weight: 600;">สถานะการเชื่อมต่อ:</span>
+          <span id="network-status" class="network-badge network-online">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: currentColor;"></span>
+            <span>ออนไลน์ (พร้อมค้นหา)</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Online Search Section -->
+      <div class="card">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-gold)" stroke-width="2">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+          </svg>
+          <h2 style="font-size: 1.1rem; color: var(--text-gold); font-weight: 700;">ค้นหาจากคลังบทสวดมนต์ออนไลน์</h2>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+          เมื่อมีอินเทอร์เน็ต สามารถค้นหาและดาวน์โหลดบทสวดมนต์เพิ่มเติมเข้าสู่คลังในเครื่องเพื่อใช้งานแบบออฟไลน์ได้ทันที
+        </p>
+
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input type="text" id="online-search-input" class="search-input" placeholder="พิมพ์ชื่อบทสวด เช่น ธัมมจัก, โพชฌังค, มหาเมตตา...">
+        </div>
+
+        <div id="online-results-list">
+          <!-- Online search results -->
+        </div>
+      </div>
+
+      <!-- Add Custom Prayer Form -->
+      <div class="card">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-gold)" stroke-width="2">
+            <path d="M12 5v14"/>
+            <path d="M5 12h14"/>
+          </svg>
+          <h2 style="font-size: 1.1rem; color: var(--text-gold); font-weight: 700;">เขียน/เพิ่มบทสวดด้วยตนเอง</h2>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+          เพิ่มบทสวดที่คุณต้องการเข้ามาในเครื่อง บันทึกและจัดลำดับได้ทันที
+        </p>
+
+        <form id="form-custom-prayer">
+          <label style="font-size: 0.85rem; font-weight: 600;">ชื่อบทสวด *</label>
+          <input type="text" id="custom-title" class="input-field" placeholder="เช่น คาถาบูชาดวงชะตา" required>
+
+          <label style="font-size: 0.85rem; font-weight: 600;">หมวดหมู่</label>
+          <select id="custom-category" class="input-field">
+            <option value="custom">บทสวดทั่วไป / กำหนดเอง</option>
+            <option value="sacred">พระคาถาศักดิ์สิทธิ์ / มหาลาภ</option>
+            <option value="paritta">พระปริตร / คุ้มครอง</option>
+            <option value="metta">แผ่เมตตา / ขอขมา</option>
+          </select>
+
+          <label style="font-size: 0.85rem; font-weight: 600;">คำสวดภาษาบาลี / บทสวดหลัก *</label>
+          <textarea id="custom-pali" class="input-field" placeholder="พิมพ์หรือวางบทสวดที่นี่..." required></textarea>
+
+          <label style="font-size: 0.85rem; font-weight: 600;">คำแปลภาษาไทย / คำอธิบาย (ถ้ามี)</label>
+          <textarea id="custom-thai" class="input-field" placeholder="คำแปลหรือความหมายของบทสวด..."></textarea>
+
+          <label style="font-size: 0.85rem; font-weight: 600;">จำนวนจบที่แนะนำ (เช่น 1, 3, 9, 108)</label>
+          <input type="number" id="custom-reps" class="input-field" value="1" min="1" max="1000">
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+              <polyline points="7 3 7 8 15 8"/>
+            </svg>
+            <span>บันทึกบทสวดเข้าคลัง</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Backup & Restore -->
+      <div class="card">
+        <h2 style="font-size: 1.1rem; color: var(--text-gold); font-weight: 700; margin-bottom: 0.5rem;">สำรองและกู้คืนข้อมูล</h2>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+          ส่งออกชุดบทสวดและบทสวดที่เพิ่มเองเป็นไฟล์สำรอง หรือนำเข้ามาใช้งานบนอุปกรณ์อื่น
+        </p>
+        <div style="display: flex; gap: 0.5rem;">
+          <button type="button" id="btn-export-backup" class="btn btn-secondary" style="flex: 1;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>ส่งออก (Backup)</span>
+          </button>
+          <label class="btn btn-secondary" style="flex: 1; cursor: pointer; text-align: center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <span>นำเข้า (Restore)</span>
+            <input type="file" id="input-import-backup" accept=".json" style="display: none;">
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- End container -->
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <button type="button" class="nav-item active" data-tab="setup">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="8" y1="6" x2="21" y2="6"/>
+        <line x1="8" y1="12" x2="21" y2="12"/>
+        <line x1="8" y1="18" x2="21" y2="18"/>
+        <line x1="3" y1="6" x2="3.01" y2="6"/>
+        <line x1="3" y1="12" x2="3.01" y2="12"/>
+        <line x1="3" y1="18" x2="3.01" y2="18"/>
+      </svg>
+      <span>จัดลำดับ/จำนวนจบ</span>
+    </button>
+    <button type="button" class="nav-item" data-tab="chant">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+      <span>เริ่มสวดมนต์</span>
+    </button>
+    <button type="button" class="nav-item" data-tab="library">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="18" height="18" x="3" y="3" rx="2"/>
+        <path d="M3 9h18"/>
+        <path d="M9 21V9"/>
+      </svg>
+      <span>คลังบทสวด</span>
+    </button>
+    <button type="button" class="nav-item" data-tab="online">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+        <path d="M2 12h20"/>
+      </svg>
+      <span>ค้นหา/เพิ่มบท</span>
+    </button>
+  </nav>
+
+  <!-- Modal: Select/Add Prayers into Active Sequence -->
+  <div id="modal-add-prayer-picker" class="modal-overlay">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+        <h3 style="color: var(--text-gold); font-size: 1.15rem; font-weight: bold;">+ เลือกบทสวดมนต์เข้าชุด</h3>
+        <button type="button" class="btn-icon btn-close-modal" style="width: 32px; height: 32px;">✕</button>
+      </div>
+
+      <div class="search-box" style="margin-bottom: 0.5rem;">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="modal-picker-search" class="search-input" placeholder="พิมพ์ชื่อบทสวดที่ต้องการค้นหา...">
+      </div>
+
+      <div id="modal-picker-list" style="max-height: 55vh; overflow-y: auto; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.75rem;">
+        <!-- Filled by JS -->
+      </div>
+
+      <button type="button" class="btn btn-primary btn-block btn-close-modal">
+        เสร็จสิ้น
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Prayer Content (ปรับแก้คำในบทสวด) -->
+  <div id="modal-edit-prayer" class="modal-overlay">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+        <h3 style="color: var(--text-gold); font-size: 1.15rem; font-weight: bold;">✏️ แก้ไขคำ/เนื้อหาบทสวด</h3>
+        <button type="button" class="btn-icon btn-close-modal" style="width: 32px; height: 32px;">✕</button>
+      </div>
+
+      <form id="form-edit-prayer">
+        <input type="hidden" id="edit-prayer-id">
+        
+        <label style="font-size: 0.85rem; font-weight: 600;">ชื่อบทสวด *</label>
+        <input type="text" id="edit-prayer-title" class="input-field" required>
+
+        <label style="font-size: 0.85rem; font-weight: 600;">คำอธิบายย่อ / ที่มา</label>
+        <input type="text" id="edit-prayer-subtitle" class="input-field">
+
+        <label style="font-size: 0.85rem; font-weight: 600;">จำนวนจบเริ่มต้น (เช่น 1, 3, 9, 108)</label>
+        <input type="number" id="edit-prayer-reps" class="input-field" min="1" max="1000">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.25rem;">
+          <label style="font-size: 0.85rem; font-weight: 600;">เนื้อหาบทสวด (คำสวดบาลีและคำแปล)</label>
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-add-edit-verse" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">+ เพิ่มท่อน</button>
+        </div>
+
+        <div id="edit-verses-container" style="max-height: 45vh; overflow-y: auto; margin-top: 0.5rem; margin-bottom: 1rem;">
+          <!-- Dynamically populated verse edit inputs -->
+        </div>
+
+        <div style="display: flex; gap: 0.4rem;">
+          <button type="button" class="btn btn-secondary" id="btn-reset-default-prayer" style="flex: 1; font-size: 0.82rem; display: none;">
+            🔄 คืนค่าเดิม
+          </button>
+          <button type="submit" class="btn btn-primary" style="flex: 1.5;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+            </svg>
+            <span>บันทึกการแก้ไข</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Drawer for Jump to Prayer in current sequence -->
+  <div id="modal-sequence-drawer" class="modal-overlay">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h3 style="color: var(--text-gold); font-size: 1.1rem; font-weight: bold;">เลือกบทสวดที่ต้องการข้ามไป</h3>
+        <button type="button" class="btn-icon btn-close-modal" style="width: 32px; height: 32px;">✕</button>
+      </div>
+      <div id="drawer-prayers-list" style="display: flex; flex-direction: column; gap: 0.4rem;">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: View Full Prayer Details -->
+  <div id="modal-prayer-details" class="modal-overlay">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+        <div>
+          <h3 id="modal-detail-title" style="color: var(--text-gold); font-size: 1.2rem; font-weight: bold;"></h3>
+          <p id="modal-detail-subtitle" style="font-size: 0.85rem; color: var(--text-muted);"></p>
+        </div>
+        <button type="button" class="btn-icon btn-close-modal" style="width: 32px; height: 32px;">✕</button>
+      </div>
+      <div id="modal-detail-content" class="prayer-content" style="max-height: 60vh; overflow-y: auto; margin-bottom: 1rem;">
+      </div>
+      <div style="display: flex; gap: 0.5rem;">
+        <button type="button" id="btn-modal-edit-prayer-direct" class="btn btn-secondary btn-sm" style="flex: 1;">
+          ✏️ แก้ไขคำสวด
+        </button>
+        <button type="button" id="btn-modal-add-to-active-seq" class="btn btn-primary btn-sm" style="flex: 1.5;">
+          <span>+ เพิ่มเข้าชุดสวดนี้</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+/**
+ * Built-in Prayers & Online Database
+ */
+
+const DEFAULT_PRAYERS = [
+  {
+    id: 'p1',
+    title: 'บทบูชาพระรัตนตรัย',
+    subtitle: 'อิมินา สักกาเรนะ - บูชาพระรัตนตรัยด้วยเครื่องสักการะ',
+    category: 'intro',
+    reps: 1,
+    verses: [
+      { pali: 'อิมินา สักกาเรนะ พุทธัง อะภิปูชะยามิ,', thai: 'ข้าพเจ้าขอบูชาพระผู้มีพระภาคเจ้า ด้วยเครื่องสักการะนี้' },
+      { pali: 'อิมินา สักกาเรนะ ธัมมัง อะภิปูชะยามิ,', thai: 'ข้าพเจ้าขอบูชาพระธรรม ด้วยเครื่องสักการะนี้' },
+      { pali: 'อิมินา สักกาเรนะ สังฆัง อะภิปูชะยามิฯ', thai: 'ข้าพเจ้าขอบูชาพระสงฆ์ ด้วยเครื่องสักการะนี้' }
+    ]
+  },
+  {
+    id: 'p2',
+    title: 'บทกราบพระรัตนตรัย',
+    subtitle: 'อะระหัง สัมมาสัมพุทโธ - นมัสการระลึกถึงพระคุณ',
+    category: 'intro',
+    reps: 1,
+    verses: [
+      { pali: 'อะระหัง สัมมาสัมพุทโธ ภะคะวา, พุทธัง ภะคะวันตัง อะภิวาเทมิ. (กราบ)', thai: 'พระผู้มีพระภาคเจ้า เป็นพระอรหันต์ ดับเพลิงกิเลสเพลิงทุกข์สิ้นเชิง ตรัสรู้ชอบได้โดยพระองค์เอง, ข้าพเจ้าขอกราบไหว้พระผู้มีพระภาคเจ้า' },
+      { pali: 'สวากขาโต ภะคะวะตา ธัมโม, ธัมมัง นะมัสสามิ. (กราบ)', thai: 'พระธรรม เป็นธรรมที่พระผู้มีพระภาคเจ้าตรัสไว้ดีแล้ว, ข้าพเจ้าขอนมัสการพระธรรม' },
+      { pali: 'สุปะฏิปันโน ภะคะวะโต สาวะกะสังโฆ, สังฆัง นะมามิ. (กราบ)', thai: 'พระสงฆ์สาวกของพระผู้มีพระภาคเจ้า ปฏิบัติดีแล้ว, ข้าพเจ้าขอนอบน้อมพระสงฆ์' }
+    ]
+  },
+  {
+    id: 'p3',
+    title: 'บทนมัสการพระผู้มีพระภาคเจ้า',
+    subtitle: 'นะโม ตัสสะ - นมัสการพระพุทธเจ้า ๓ จบ',
+    category: 'intro',
+    reps: 3,
+    verses: [
+      { pali: 'นะโม ตัสสะ ภะคะวะโต อะระหะโต สัมมาสัมพุทธัสสะ\nนะโม ตัสสะ ภะคะวะโต อะระหะโต สัมมาสัมพุทธัสสะ\nนะโม ตัสสะ ภะคะวะโต อะระหะโต สัมมาสัมพุทธัสสะ', thai: 'ขอนอบน้อมแด่พระผู้มีพระภาคเจ้า พระองค์นั้น ซึ่งเป็นผู้ไกลจากกิเลส เป็นผู้ตรัสรู้ชอบได้โดยพระองค์เอง' }
+    ]
+  },
+  {
+    id: 'p4',
+    title: 'บทขอขมาพระรัตนตรัย (หลวงพ่อฤาษีลิงดำ วัดท่าซุง)',
+    subtitle: 'สัพพัง อะปะราธัง - ขอขมาโทษที่เคยล่วงเกินด้วยกาย วาจา ใจ',
+    category: 'intro',
+    reps: 1,
+    verses: [
+      {
+        pali: 'สัพพัง อะปะราธัง ขะมะถะ เม ภันเต,\nอุกาสะ ทะวารัตตะเยนะ กะตัง,\nสัพพัง อะปะราธัง ขะมะถะ เม ภันเต,\nอุกาสะ ขะมามิ ภันเตฯ',
+        thai: 'หากข้าพระพุทธเจ้า ได้เคยประมาทพลาดพลั้ง ล่วงเกินต่อพระรัตนตรัย อันมีสมเด็จองค์ปฐม พระพุทธเจ้าทุกๆ พระองค์ พระปัจเจกพุทธเจ้าทุกๆ พระองค์ พระธรรม และพระอริยสงฆ์ทั้งหลาย ในอดีตชาติก็ตาม ปัจจุบันชาติก็ตาม ด้วยกายกรรม วจีกรรม มโนกรรม ก็ดี เจตนาก็ดี มิได้เจตนาก็ดี รู้เท่าไม่ถึงการณ์ก็ดี...'
+      },
+      {
+        pali: '(คำอธิษฐานจิต)',
+        thai: 'ขอองค์สมเด็จพระสัมมาสัมพุทธเจ้าทุกๆ พระองค์ พระธรรม และพระอริยสงฆ์ทั้งหลาย ได้โปรดยกโทษ อดโทษให้แก่ข้าพระพุทธเจ้า นับตั้งแต่บัดนี้เป็นต้นไป ตราบเท่าเข้าสู่พระนิพพานเทอญ'
+      }
+    ]
+  },
+  {
+    id: 'p5',
+    title: 'บทไตรสรณคมน์',
+    subtitle: 'พุทธัง สะระณัง คัจฉามิ - ยึดพระรัตนตรัยเป็นที่พึ่งอันสูงสุด',
+    category: 'intro',
+    reps: 1,
+    verses: [
+      { pali: 'พุทธัง สะระณัง คัจฉามิ.\nธัมมัง สะระณัง คัจฉามิ.\nสังฆัง สะระณัง คัจฉามิ.', thai: 'ข้าพเจ้าขอถือเอาพระพุทธเจ้าเป็นที่พึ่ง, พระธรรมเป็นที่พึ่ง, พระสงฆ์เป็นที่พึ่ง' },
+      { pali: 'ทุติยัมปิ พุทธัง สะระณัง คัจฉามิ.\nทุติยัมปิ ธัมมัง สะระณัง คัจฉามิ.\nทุติยัมปิ สังฆัง สะระณัง คัจฉามิ.', thai: 'แม้ครั้งที่สอง ข้าพเจ้าขอถือเอาพระรัตนตรัยเป็นที่พึ่ง' },
+      { pali: 'ตะติยัมปิ พุทธัง สะระณัง คัจฉามิ.\nตะติยัมปิ ธัมมัง สะระณัง คัจฉามิ.\nตะติยัมปิ สังฆัง สะระณัง คัจฉามิ.', thai: 'แม้ครั้งที่สาม ข้าพเจ้าขอถือเอาพระรัตนตรัยเป็นที่พึ่ง' }
+    ]
+  },
+  {
+    id: 'p6',
+    title: 'บทสมาทานศีล ๕',
+    subtitle: 'ปาณาติปาตา - ตั้งจิตรักษาความบริสุทธิ์แห่งศีล',
+    category: 'intro',
+    reps: 1,
+    verses: [
+      {
+        pali: '๑. ปาณาติปาตา เวระมะณี สิกขาปะทัง สะมาทิยามิ\n๒. อะทินนาทานา เวระมะณี สิกขาปะทัง สะมาทิยามิ\n๓. กาเมสุ มิจฉาจารา เวระมะณี สิกขาปะทัง สะมาทิยามิ\n๔. มุสาวาทา เวระมะณี สิกขาปะทัง สะมาทิยามิ\n๕. สุราเมระยะมัชชะปะมาทัฏฐานา เวระมะณี สิกขาปะทัง สะมาทิยามิ',
+        thai: 'ข้าพเจ้าขอสมาทานสิกขาบท คือ งดเว้นจากการฆ่าสัตว์, ลักทรัพย์, ประพฤติผิดในกาม, พูดปด, และดื่มสุราเมรัยสิ่งมึนเมาอันเป็นที่ตั้งแห่งความประมาท'
+      }
+    ]
+  }
+];
+
+DEFAULT_PRAYERS.push(
+  {
+    id: 'p7',
+    title: 'บทสรรเสริญพระรัตนตรัย (อิติปิโส - สวากขาโต - สุปะฏิปันโน)',
+    subtitle: 'พุทธคุณ ธรรมคุณ สังฆคุณ เสริมสิริมงคล คุ้มครองป้องกันภัย',
+    category: 'sacred',
+    reps: 1,
+    verses: [
+      {
+        pali: '[บทสรรเสริญพระพุทธคุณ]\nอิติปิ โส ภะคะวา อะระหัง สัมมาสัมพุทโธ, วิชชาจะระณะสัมปันโน สุขะโต โลกะวิทู, อะนุตตะโร ปุริสะทัมมะสาระถิ สัตถา เทวะมะนุสสานัง พุทโธ ภะคะวาติ.',
+        thai: 'เพราะเหตุอย่างนี้ พระผู้มีพระภาคเจ้านั้น เป็นผู้ไกลจากกิเลส เป็นผู้ตรัสรู้ชอบได้โดยพระองค์เอง เป็นผู้ถึงพร้อมด้วยวิชชาและจรณะ เป็นผู้เสด็จไปดีแล้ว เป็นผู้รู้แจ้งโลก เป็นสารถีฝึกบุรุษที่สมควรฝึกได้ เป็นครูผู้สอนของเทวดาและมนุษย์ทั้งหลาย เป็นผู้รู้ ผู้ตื่น ผู้เบิกบาน'
+      },
+      {
+        pali: '[บทสรรเสริญพระธรรมคุณ]\nสวากขาโต ภะคะวะตา ธัมโม, สันทิฏฐิโก อะกาลิโก เอหิปัสสิโก, โอปะนะยิโก ปัจจัตตัง เวทิตัพโพ วิญญูหีติ.',
+        thai: 'พระธรรม เป็นธรรมที่พระผู้มีพระภาคเจ้าตรัสไว้ดีแล้ว เป็นสิ่งที่ผู้ศึกษาและปฏิบัติพึงเห็นได้ด้วยตนเอง เป็นสิ่งที่ปฏิบัติได้และให้ผลได้ไม่จำกัดกาล เป็นสิ่งที่ควรกล่าวกับผู้อื่นว่าท่านจงมาดูเถิด เป็นสิ่งที่ควรน้อมเข้ามาใส่ตน เป็นสิ่งที่ผู้รู้พึงรู้ได้เฉพาะตน'
+      },
+      {
+        pali: '[บทสรรเสริญพระสังฆคุณ]\nสุปะฏิปันโน ภะคะวะโต สาวะกะสังโฆ, อุชุปะฏิปันโน ภะคะวะโต สาวะกะสังโฆ,\nญายะปะฏิปันโน ภะคะวะโต สาวะกะสังโฆ, สามีจิปะฏิปันโน ภะคะวะโต สาวะกะสังโฆ,\nยะทิทัง จัตตาริ ปุริสะยุคานิ อัฏฐะ ปุริสะปุคคะลา, เอสะ ภะคะวะโต สาวะกะสังโฆ,\nอาหุเนยโย ปาหุเนยโย ทักขิเณยโย อัญชะลีกะระณีโย, อะนุตตะรัง ปุญญักเขตตัง โลกัสสาติ.',
+        thai: 'พระสงฆ์สาวกของพระผู้มีพระภาคเจ้า ปฏิบัติดีแล้ว, ปฏิบัติตรงแล้ว, ปฏิบัติเพื่อรู้ธรรมเป็นเครื่องออกจากทุกข์แล้ว, ปฏิบัติสมควรแล้ว, ได้แก่คู่แห่งบุรุษ ๔ คู่ นับเรียงตัวบุรุษได้ ๘ บุรุษ, นั่นคือพระสงฆ์สาวกของพระผู้มีพระภาคเจ้า เป็นผู้ควรแก่ของคำนับ เป็นผู้ควรแก่การต้อนรับ เป็นผู้ควรแก่ทักษิณาทาน เป็นผู้ที่บุคคลทั่วไปควรทำอัญชลี เป็นเนื้อนาบุญอันยอดเยี่ยมของโลก'
+      }
+    ]
+  },
+  {
+    id: 'p8',
+    title: 'พุทธชัยมงคลคาถา (พาหุง)',
+    subtitle: 'บทสวดชนะอุปสรรค ชนะมารและศัตรูทั้งปวงด้วยพุทธบารมี',
+    category: 'paritta',
+    reps: 1,
+    verses: [
+      {
+        pali: '๑. พาหุง สะหัสสะมะภินิมมิตะสาวุธันตัง คิรีเมขะลัง อุทิตะโฆระสะเสนะมารัง, ทานาทิธัมมะวิธินา ชิตะวา มุนินโท ตันเตชะสา ภะวะตุ เต ชะยะมังคะลานิ.',
+        thai: 'พระจอมมุนีได้ทรงชนะพญามารผู้เนรมิตแขนตั้งพันถืออาวุธ ขี่ช้างคิรีเมขละ ด้วยทานบารมีเป็นต้น ขอเดชะแห่งพระพุทธชัยมงคลนั้น จงบันดาลให้ท่านมีชัยมงคล'
+      },
+      {
+        pali: '๒. มาราติเรกะมะภิยุชฌิตะสัพพะรัตติง โฆรัมปะนาฬะวะกะมักขะมะถัทธะยักขัง, ขันตีสุทันตะวิธินา ชิตะวา มุนินโท ตันเตชะสา ภะวะตุ เต ชะยะมังคะลานิ.',
+        thai: 'พระจอมมุนีได้ทรงชนะอาฬวกยักษ์ผู้ดุร้าย ด้วยขันติบารมี...'
+      },
+      {
+        pali: '๓. นาฬาคิริง คะชะวะรัง อะติมัตตะภูตัง ทาวัคคิจักกะมะสะนีวะ สุทารุณันตัง, เมตตัมพุเสกะวิธินา ชิตะวา มุนินโท ตันเตชะสา ภะวะตุ เต ชะยะมังคะลานิ.',
+        thai: 'พระจอมมุนีได้ทรงชนะช้างนาฬาคิรี ด้วยน้ำพระเมตตา...'
+      },
+      {
+        pali: '๔. อุกขิตตะขัคคะมะติหัตถะสุทารุณันตัง ธาวันติโยชะนะปะถังคุลิมาละวันตัง, อิทธีภิสังขะตะมะโน ชิตะวา มุนินโท ตันเตชะสา ภะวะตุ เต ชะยะมังคะลานิ.',
+        thai: 'พระจอมมุนีได้ทรงชนะโจรองคุลิมาล ด้วยฤทธิ์ทางใจ...'
+      },
+      {
+        pali: '๕. กัตวานะ กัฏฐะมุทะรัง อิวะ คัพภินียา จิญจายะ ทุฏฐะวะจะนัง ชะนะกายะมัชเฌ, สันเตนะ โสโมวิธินา ชิตะวา มุนินโท ตันเตชะสา ภะวะตุ เต ชะยะมังคะลานิ.',
+        thai: 'พระจอมมุนีได้ทรงชนะคำกล่าวร้ายของนางจิญจมาณวิกา ด้วยความสงบระงับ...'
+      },
+      {
+        pali: '๖. สัจจัง วิหายะ มะติสัจจะกะวาทะเกตุง วาทาภิโรปิตะมะนัง อะติอันธะภูตัง, ปัญญาปะทีปะชะลิโต ชิตะวา มุนินโท ตันเตชะสา ภะวะตุ เต ชะยะมังคะลานิ.',
+        thai: 'พระจอมมุนีได้ทรงชนะสัจจกนิครนถ์ ด้วยประทีปแห่งปัญญา...'
+      },
+      {
+        pali: '๗. นันโทปะนันทะภุชะคัง วิพุธัง มะหิทธิง ปุตเตนะ เถระภุชะเคนะ ทะมาปะยันโต, อิทธูปะเทสะวิธินา ชิตะวา มุนินโท ตันเตชะสา ภะวะตุ เต ชะยะมังคะลานิ.',
+        thai: 'พระจอมมุนีได้ทรงโปรดให้พระโมคคัลลานะเถระไปปราบพญานันโทปนันทนาคราช...'
+      },
+      {
+        pali: '๘. ทุคคาหะทิฏฐิภุชะเคนะ สุทัฏฐะหัตถัง พรัหมัง วิสุทธิชุติมิทธิพะกาภิธานัง, ญาณาคะเทนะ วิธินา ชิตะวา มุนินโท ตันเตชะสา ภะวะตุ เต ชะยะมังคะลานิ.',
+        thai: 'พระจอมมุนีได้ทรงชนะผกาพรหม ด้วยโอสถคือญาณปัญญา...'
+      },
+      {
+        pali: 'เอตาปิ พุทธะชะยะมังคะละอัฏฐะคาถา โย วาจะโน ทินะทิเน สะระเต มะตันที, หิตวานะเนกะวิวิธานิ จุปัททะวานิ โมกขัง สุขัง อะธิคะเมยยะ นะโร สะปัญโญฯ',
+        thai: 'นรชนใดมีปัญญา สวดพระพุทธชัยมงคล ๘ บทนี้เป็นประจำ ย่อมพ้นจากอุปัทวันตรายและประสพความสุขเกษมศานต์'
+      }
+    ]
+  },
+  {
+    id: 'p9',
+    title: 'ชัยปริตร (มหากา)',
+    subtitle: 'มหาการุณิโก นาโถ - น้อมบารมีพระมหากรุณาธิคุณ ประสิทธิ์ประสาทพรชัย',
+    category: 'paritta',
+    reps: 1,
+    verses: [
+      {
+        pali: 'มะหาการุณิโก นาโถ หิตายะ สัพพะปาณินัง ปูเรตวา ปาระมี สัพพา ปัตโต สัมโพธิมุตตะมัง, เอเตนะ สัจจะวัชเชนะ โหตุ เต ชะยะมังคะลังฯ',
+        thai: 'พระพุทธเจ้าผู้ทรงเป็นที่พึ่งของสัตว์ทั้งหลาย ทรงบำเพ็ญพระบารมีทั้งปวงบริบูรณ์แล้ว เพื่อประโยชน์เกื้อกูลแก่สรรพสัตว์ ได้ทรงบรรลุพระสัมโพธิญาณ ด้วยสัจจวาจานี้ ขอชัยมงคลจงมีแก่ท่าน'
+      },
+      {
+        pali: 'ชะยันโต โพธิยา มูเล สักยานัง นันทิวัฑฒะโน เอวัง ตวัง วิชะโย โหหิ ชะยัสสุ ชะยะมังคะเล, อะปะราชิตะปัลลังเก สีเส ปะฐะวิโปกขะเร อะภิเสเก สัพพะพุทธานัง อัคคัปปัตโต ปะโมทะติฯ',
+        thai: 'ขอท่านจงมีชัยชนะ ดุจพระสัมมาสัมพุทธเจ้าทรงมีชัยชนะมาร ณ โคนต้นมหาโพธิ์ เหนืออปราชิตบัลลังก์...'
+      },
+      {
+        pali: 'สุนักขัตตัง สุมังคะลัง สุปะภาตัง สุหุฏฐิตัง สุขะโณ สุมุหุตโต จะ สุยิฏฐัง พรัหมะจาริสุ, ปะทักขิณัง กายะกัมมัง วาจากัมมัง ปะทักขิณัง ปะทักขิณัง มะโนกัมมัง ปะณิธี เต ปะทักขิณา, ปะทักขิณานิ กัตวานะ ละภันตัดเถ ปะทักขิเณฯ',
+        thai: 'เวลาที่สัตว์ประพฤติชอบ ชื่อว่าฤกษ์ดี มงคลดี สว่างดี รุ่งอรุณดี กายกรรม วจีกรรม มโนกรรม ย่อมเป็นกุศลอันประเสริฐ'
+      }
+    ]
+  },
+  {
+    id: 'p10',
+    title: 'พระคาถามงกุฎพระพุทธเจ้า',
+    subtitle: 'อิติปิโส วิเสเสอิ - พระคาถาป้องกันภัย เสริมสติปัญญา บารมี คุ้มครองรอบด้าน',
+    category: 'sacred',
+    reps: 3,
+    verses: [
+      {
+        pali: 'อิติปิโส วิเสเสอิ\nอิเสเส พุทธะนาเมอิ\nอิเมนา พุทธะตังโสอิ\nอิโสตัง พุทธะปิติอิ',
+        thai: '(สวด ๓, ๙ หรือ ๑๐๘ จบ) ขออัญเชิญบารมีพระพุทธเจ้าอันเลิศ ประทับเหนือเศียรเกล้า คุ้มครองรักษาให้แคล้วคลาดปลอดภัย เจริญด้วยปัญญา เมตตามหานิยม ศัตรูพ่ายแพ้ คิดสิ่งใดสำเร็จสมปรารถนา'
+      }
+    ]
+  },
+  {
+    id: 'p11',
+    title: 'กรณียเมตตาสูตร',
+    subtitle: 'กะระณียะมัตถะกุสะเลนะ - บทแผ่เมตตาใหญ่ ป้องกันภูตผี อมุนษย์และภยันตรายทั้งปวง',
+    category: 'paritta',
+    reps: 1,
+    verses: [
+      {
+        pali: 'กะระณียะมัตถะกุสะเลนะ ยันตัง สันตัง ปะทัง อะภิสะเมจจะ,\nสักโก อุชู จะ สุหุชู จะ สุวะโจ จัสสะ มุทุ อะนะติมานี,\nสันตุสสะโก จะ สุภะโร จะ อัปปะกิจโจ จะ สัลละหุกะวุตติ,\nสันตินทริโย จะ นิปะโก จะ อัปปะคัพโภ กุเลสุ อะนะนุคิทโธ,',
+        thai: 'กุลบุตรผู้ฉลาดในประโยชน์ พึงเป็นผู้กล้า, ซื่อตรง, ว่าง่าย, อ่อนโยน, ไม่เย่อหยิ่ง, สันโดษ, เลี้ยงง่าย, มีภาระน้อย, ประพฤติเบากายเบาใจ, มีอินทรีย์สงบระงับ, มีปัญญาฉลาดรักษาตน, ไม่คะนอง'
+      },
+      {
+        pali: 'นะ จะ ขุททัง สะมาจะเร กิญจิ เยนะ วิญญู ปะเร อุปะวะเทยยุง,\nสุขิโน วา เขมิโน โหนตุ สัพเพ สัตตา ภะวันตุ สุขิตัตตาฯ',
+        thai: 'ไม่พึงประพฤติสิ่งที่วิญญูชนติเตียนได้ พึงแผ่จิตไปว่า: ขอสัตว์ทั้งปวงจงมีความสุข มีความเกษม มีจิตผ่องใสเบิกบานเถิด'
+      },
+      {
+        pali: 'เย เกจิ ปาณะภูตัตถิ ตะสา วา ถาวะรา วา อะนะวะเสสา,\nทีฆา วา เย มะหันตา วา มัชฌิมา รัสสะกา อะณุกะถูลา,\nทิฏฐา วา เย จะ อัททิฏฐา เย จะ ทูเร วะสันติ อะวิทูเร,\nภูตา วา สัมภะเวสี วา สัพเพ สัตตา ภะวันตุ สุขิตัตตาฯ',
+        thai: 'สัตว์มีชีวิตทั้งหลาย สัตว์สะดุ้งหรือสัตว์มั่นคง สัตว์ตัวยาว ตัวใหญ่ ปานกลาง ตัวสั้น ละเอียดหรือหยาบ ที่เห็นแล้วหรือมิได้เห็น อยู่ใกล้หรืออยู่ไกล ที่เกิดแล้วหรือกำลังแสวงหาภพเกิด ขอสัตว์ทั้งปวงจงมีความสุขเถิด'
+      },
+      {
+        pali: 'มาตา ยะถา นิยัง ปุตตัง อายุสา เอกะปุตตะมะนุรักเข,\nเอวัมปิ สัพพะภูเตสุ มานะสัมภาวะเย อะปะริมาณังฯ',
+        thai: 'มารดาถนอมบุตรคนเดียวผู้เป็นที่รักด้วยชีวิตฉันใด พึงเจริญเมตตาจิตอันหาขอบเขตมิได้ ไปในสัตว์ทั้งหลายทั้งปวงฉันนั้น'
+      },
+      {
+        pali: 'เมตตัญจะ สัพพะโลกัสมิง มานะสัมภาวะเย อะปะริมาณัง,\nอุทธัง อะโธ จะ ติริยัญจะ อะสัมพาธัง อะเวรัง อะสะปัตตังฯ',
+        thai: 'พึงเจริญเมตตาจิตไม่มีประมาณ ไปในโลกทั้งปวง ทั้งเบื้องบน เบื้องล่าง เบื้องขวาง ปราศจากเวร ปราศจากศัตรู'
+      },
+      {
+        pali: 'ทิฏฐิญจะ อะนุปะคัมมะ สีละวา ทัสสะเนนะ สัมปันโน,\nกาเมสุ วิเนยยะ เคธัง นะ หิ ชาตุ คัพภะเสยยัง ปุนะเรตีติฯ',
+        thai: 'บุคคลผู้มีเมตตา มีศีล ถึงพร้อมด้วยทัศนะ กำจัดความยินดีในกามทั้งหลาย ย่อมไม่เข้าถึงการนอนในครรภ์เพื่อเกิดใหม่อีกโดยแท้แล'
+      }
+    ]
+  }
+);
+
+DEFAULT_PRAYERS.push(
+  {
+    id: 'p12',
+    title: 'พระคาถาชินบัญชร (สมเด็จพระพุฒาจารย์ โต พรหมรังสี)',
+    subtitle: 'ชะยาสะนากะตา พุทธา - พระคาถาอันศักดิ์สิทธิ์ คุ้มครองป้องกันภัย ๑๐ ทิศ บันดาลสิริมงคล',
+    category: 'sacred',
+    reps: 1,
+    verses: [
+      { pali: '๑. ชะยาสะนากะตา พุทธา เชตวา มารัง สะวาหะนัง, จะตุสัจจาสะภัง ระสัง เย ปิวิงสุ นะราสะภา.', thai: 'พระพุทธเจ้าผู้ประทับบนชัยบัลลังก์ ทรงพิชิตพญามารพร้อมเสนาบดี เสวยอมฤตธรรมรสคืออริยสัจจธรรม ๔ ประการ เป็นผู้นำสัตว์โลกให้ข้ามพ้นวัฏสงสาร' },
+      { pali: '๒. ตัณหังกะราทะโย พุทธา อัฏฐะวีสะติ นายะกา, สัพเพ ปะติฏฐิตา มัยหัง มัตถะเก เต มุนิสสะรา.', thai: 'พระพุทธเจ้า ๒๘ พระองค์ มีพระตัณหังกรเป็นอาทิ ผู้เป็นจอมมุนี ข้าพเจ้าขออัญเชิญมาประดิษฐานไว้เหนือเศียรเกล้า' },
+      { pali: '๓. สิเร ปะติฏฐิโต มัยหัง พุทโธ ธัมโม ทะวิโลจะเน, สังโฆ ปะติฏฐิโต มัยหัง อุเร สัพพะคุณากะโร.', thai: 'พระพุทธเจ้าประดิษฐานที่ศีรษะ พระธรรมอยู่ที่ดวงตาทั้งสอง พระสงฆ์ผู้เป็นบ่อเกิดแห่งคุณธรรมสถิตที่อก' },
+      { pali: '๔. หะทะเย เม อะนุรุทโธ สารีปุตโต จะ ทักขิเณ, โกณฑัญโญ ปิฏฐิภาคัสมิง โมคคัลลาโน จะ วามะเก.', thai: 'พระอนุรุทธะอยู่ที่หทัย พระสารีบุตรอยู่เบื้องขวา พระโกณฑัญญะอยู่เบื้องหลัง พระโมคคัลลานะอยู่เบื้องซ้าย' },
+      { pali: '๕. ทักขิเณ สะวะเน มัยหัง อาสุง อานันทะราหุโล, กัสสะโป จะ มะหานาโม อุโภสุง วามะโสตะเก.', thai: 'พระอานนท์และพระราหุลอยู่ที่หูขวา พระกัสสปะและพระมหานามะอยู่ที่หูซ้าย' },
+      { pali: '๖. เกสะโต ปิฏฐิภาคัสมิง สุริโย วะ ปะภังกะโร, นิสินโน สิริสัมปันโน โสภิโต มุนิปุงคะโว.', thai: 'พระโสภิตะผู้สมบูรณ์ด้วยสิริ ดุจดวงอาทิตย์สถิตอยู่ที่กลุ่มเส้นผมเบื้องหลัง' },
+      { pali: '๗. กุมาระกัสสะโป เถโร มะเหสี จิตตะวาทะโก, โส มัยหัง วะทะเน นิจจัง ปะติฏฐาสิ คุณากะโร.', thai: 'พระกุมารกัสสปเถระผู้มีวาทะอันไพเราะ สถิตอยู่ที่ปากของข้าพเจ้าเป็นนิจ' },
+      { pali: '๘. ปุณโณ อังคุลิมาโล จะ อุปาลี สีวะลี ถีรา, ปัญจะ เต ชาตา นะลาเต ติละกา มะมะ.', thai: 'พระเถระ ๕ องค์ คือ พระปุณณะ พระองคุลิมาล พระอุบาลี พระสีวลี ปรากฏอยู่ที่หน้าผากดุจรอยเจิม' },
+      { pali: '๙. เสสาสีติ มะหาเถรา วิชิตา ชินะสาวะกา, เอเตสีติ มะหาเถรา ชิตะวันโต ชิโนระสา, ชะลันตา สีละเตเชนะ อังคะมังเคสุ สัณฐิตา.', thai: 'พระมหาเถระ ๘๐ รูปที่เหลือ ผู้ชนะมาร มีศีลบริสุทธิ์ สถิตอยู่ทั่วทุกอวัยวะน้อยใหญ่' },
+      { pali: '๑๐. ระตะนัง ปุระโต อาสิ ทักขิเณ เมตตะสุตตะกัง, ธะชัคคัง ปัจฉะโต อาสิ วามเก อังคุลิมาละกัง.', thai: 'พระรัตนสูตรอยู่เบื้องหน้า พระเมตตสูตรอยู่เบื้องขวา พระธชัคคสูตรอยู่เบื้องหลัง พระองคุลิมาลปริตรอยู่เบื้องซ้าย' },
+      { pali: '๑๑. ขันธะโมระปะริตตัญจะ อาฏานาฏิยะสุตตะกัง, อากาสัฏฐานิ ปาการัง เสสา ปาการะสัณฐิตา.', thai: 'พระขันธปริตร พระโมรปริตร และอาฏานาฏิยสูตร เป็นกำแพงคุ้มกันในอากาศ พระปริตรที่เหลือเป็นปราการล้อมรอบ' },
+      { pali: '๑๒. ชินาณา วะระสังยุตตา สัตตัปปาการะลังกะตา, วาตะปิตตาทิสัญชาตา พาหิรัชฌัตตุปัททะวา, อะเสสา วินะยัง ยันตุ อะนันตะชินะเตชะสา.', thai: 'ด้วยอานุภาพแห่งพระชินเจ้า ล้อมรอบด้วยกำแพงแก้ว ๗ ชั้น ขออุปัทวันตรายภายนอกภายในทั้งปวงจงพินาศไป' },
+      { pali: '๑๓. วะสะโต เม สะกิจเจนะ สะทา สัมพุทธะปัญชะเร, ชินะปัญชะระมัชฌัมหิ วิหะรันตัง มะฮีตะเล, สะทา ปาเลนตุ มัง สัพเพ เต มะหาปุริสาสะภา.', thai: 'เมื่อข้าพเจ้าพำนักอยู่ในพระบัญชรแห่งพระสัมมาสัมพุทธเจ้า ขอพระมหาบุรุษผู้ประเสริฐเหล่านั้นทั้งปวง จงอภิบาลรักษาข้าพเจ้า' },
+      { pali: '๑๔. อิจเจวะมันโต สุคุตโต สุรักโข, ชินานุภาเวนะ ชิตุปัททะโว, ธัมมานุภาเวนะ ชิตาริสังโฆ, สังฆานุภาเวนะ ชิตันตะราโย, สัทธัมมานุภาวะปาลิโต จะรามิ ชินะปัญชะเรติฯ', thai: 'ด้วยเดชานุภาพแห่งพระรัตนตรัย ขอข้าพเจ้าจงพ้นจากอุปัทวะและศัตรูทั้งปวง มีสัทธรรมคุ้มครอง ดำรงมั่นอยู่ในพระชินบัญชรเทอญ' }
+    ]
+  },
+  {
+    id: 'p13',
+    title: 'พระคาถามหาจักรพรรดิ (หลวงปู่ดู่ พรหมปัญโญ)',
+    subtitle: 'นะโมพุทธายะ - พระคาถาศักดิ์สิทธิ์ ปรับภพภูมิ แผ่บุญ เสริมชะตาชีวิต',
+    category: 'sacred',
+    reps: 9,
+    verses: [
+      {
+        pali: '(นะโม ตัสสะ ภะคะวะโต อะระหะโต สัมมาสัมพุทธัสสะ ๓ จบ)\n\nนะโมพุทธายะ พระพุทธะ ไตรรัตนะญาณ\nมณีนพรัตน์ สีสะหัสสะ สุธรรมา\nพุทโธ ธัมโม สังโฆ ยะธาพุทโมนะ\nพุทธะบูชา ธัมมะบูชา สังฆะบูชา\nอัคคีทานัง วะรังคันธัง สีวะลี จะมะหาเถรัง\nอะหัง วันทามิ ทูระโต อะหัง วันทามิ ธาตุโย\nอะหัง วันทามิ สัพพะโส\nพุทธะ ธัมมะ สังฆะ ปูเชมิฯ',
+        thai: 'ขอนอบน้อมแด่พระพุทธเจ้า ๕ พระองค์ น้อมบูชาพระพุทธ พระธรรม พระสงฆ์ พระรัตนตรัยญาณ พระสีวลีมหาเถระผู้มีลาภมาก ขอกราบไหว้นมัสการพระบรมสารีริกธาตุและพระธรรมคำสอน น้อมส่งพลังบุญปรับภพภูมิและคุ้มครองดวงชะตา'
+      }
+    ]
+  },
+  {
+    id: 'p14',
+    title: 'พระคาถาเงินล้าน (หลวงพ่อฤาษีลิงดำ วัดท่าซุง)',
+    subtitle: 'สัมปะจิตฉามิ นาสังสิโม - คาถามหาลาภ คล่องตัว ปลดหนี้ การเงินราบรื่น',
+    category: 'sacred',
+    reps: 9,
+    verses: [
+      {
+        pali: '(ตั้งนะโม ๓ จบ)\n\nสัมปะจิตฉามิ นาสังสิโม\nพรหมา จะ มหาเทวา สัพเพยักขา ปะรายันติ (คาถาปัดอุปสรรค)\nพรหมา จะ มหาเทวา อภิลาภา ภะวันตุ เม (คาถาเงินแสน)\nมหาปุญโญ มหาลาโภ ภะวันตุ เม (คาถาลาภไม่ขาดสาย)\nมิเตพาหุหะติ (คาถาเงินล้าน)\nพุทธะมะอะอุ นะโมพุทธายะ วิระทะโย วิระโคนายัง\nวิระหิงสา วิระทาสี วิระทาสา วิระอิตถิโย พุทธัสสะ\nมานีมามะ พุทธัสสะ สวาโหม (คาถาพระปัจเจกพุทธเจ้า)\nสัมปะติจฉามิ (คาถาเร่งลาภให้ได้ผลเร็ว)\nเพ็งๆ พาๆ หาๆ ฤาๆ',
+        thai: '(นิยมสวด ๙ หรือ ๓๐ จบเป็นประจำทุกวัน) ขออัญเชิญบารมีพระพุทธ พระธรรม พระสงฆ์ พระปัจเจกพุทธเจ้า พรหมและเทวดาทั้งหลาย โปรดประทานความคล่องตัว โชคลาภ การเงิน และความสำเร็จแก่ข้าพเจ้า'
+      }
+    ]
+  },
+  {
+    id: 'p15',
+    title: 'บทแผ่เมตตาให้ตนเอง',
+    subtitle: 'อะหัง สุขิโต โหมิ - ปรารถนาความสุข สงบเย็นแก่จิตใจตนเอง',
+    category: 'metta',
+    reps: 1,
+    verses: [
+      {
+        pali: 'อะหัง สุขิโต โหมิ,\nอะหัง นิททุกโข โหมิ,\nอะหัง อะเวโร โหมิ,\nอะหัง อัพยาปัชโฌ โหมิ,\nอะหัง อะนีโฆ โหมิ,\nสุขี อัตตานัง ปะริหะรามิฯ',
+        thai: 'ขอให้ข้าพเจ้า จงเป็นผู้มีความสุขเถิด, ขอให้ข้าพเจ้า จงเป็นผู้ปราศจากความทุกข์เถิด, ขอให้ข้าพเจ้า จงเป็นผู้ไม่มีเวรต่อใครเถิด, ขอให้ข้าพเจ้า จงเป็นผู้ไม่เบียดเบียนใครเถิด, ขอให้ข้าพเจ้า จงเป็นผู้ไม่มีความทุกข์กายทุกข์ใจเถิด, ขอให้ข้าพเจ้า จงมีความสุขกายสุขใจ รักษาตนให้พ้นจากทุกข์ภัยทั้งสิ้นเถิด'
+      }
+    ]
+  },
+  {
+    id: 'p16',
+    title: 'บทแผ่เมตตาให้สรรพสัตว์',
+    subtitle: 'สัพเพ สัตตา - แผ่จิตเมตตาไม่มีประมาณแก่เพื่อนร่วมทุกข์ทั่วสากลโลก',
+    category: 'metta',
+    reps: 1,
+    verses: [
+      {
+        pali: 'สัพเพ สัตตา, อะเวรา โหนตุ, อัพยาปัชฌา โหนตุ, อะนีฆา โหนตุ, สุขี อัตตานัง ปะริหะรันตุ.',
+        thai: 'สัตว์ทั้งหลายทั้งปวง ที่เป็นเพื่อนทุกข์ เกิด แก่ เจ็บ ตาย ด้วยกันทั้งหมดทั้งสิ้น, จงเป็นสุขเป็นสุขเถิด อย่าได้มีเวรแก่กันและกันเลย, จงเป็นสุขเป็นสุขเถิด อย่าได้เบียดเบียนซึ่งกันและกันเลย, จงเป็นสุขเป็นสุขเถิด อย่าได้มีความทุกข์กายทุกข์ใจเลย, จงมีความสุขกายสุขใจ รักษาตนให้พ้นจากทุกข์ภัยทั้งสิ้นเถิด'
+      }
+    ]
+  },
+  {
+    id: 'p17',
+    title: 'บทอุทิศส่วนบุญส่วนกุศล (กรวดน้ำ)',
+    subtitle: 'อิทัง เม ญาตีนัง โหตุ - อุทิศผลบุญแก่บิดามารดา ครูอาจารย์ ญาติมิตร และเจ้ากรรมนายเวร',
+    category: 'metta',
+    reps: 1,
+    verses: [
+      {
+        pali: 'อิทัง เม ญาตีนัง โหตุ สุขิตา โหนตุ ญาตะโย.\nอิทัง เม มาตาปิตูนัง โหตุ สุขิตา โหนตุ มาตาปิตะโร.\nอิทัง เม คุรูปัชฌายาจริยานัง โหตุ สุขิตา โหนตุ คุรูปัชฌายาจริยา.',
+        thai: 'ขอส่วนบุญนี้ จงสำเร็จแก่ญาติทั้งหลายของข้าพเจ้า ขอให้ญาติทั้งหลายจงมีความสุข, ขอส่วนบุญนี้ จงสำเร็จแก่บิดามารดาของข้าพเจ้า ขอให้บิดามารดาจงมีความสุข, ขอส่วนบุญนี้ จงสำเร็จแก่ครูบาอาจารย์ของข้าพเจ้า ขอให้ครูบาอาจารย์จงมีความสุข'
+      },
+      {
+        pali: 'อิทัง สัพพะเทวะตานัง โหตุ สุขิตา โหนตุ สัพเพ เทวา.\nอิทัง สัพพะเปตานัง โหตุ สุขิตา โหนตุ สัพเพ เปตา.\nอิทัง สัพพะเวรีนัง โหตุ สุขิตา โหนตุ สัพเพ เวรี.\nนิพพานะปัจจะโย โหตุฯ',
+        thai: 'ขอส่วนบุญนี้ จงสำเร็จแก่เทวดาทั้งหลาย, เปรตทั้งหลาย, เจ้ากรรมนายเวรทั้งหลาย ขอให้พ้นจากทุกข์ภัย และขอผลบุญนี้จงเป็นปัจจัยเกื้อหนุนให้เข้าถึงพระนิพพานเทอญ'
+      }
+    ]
+  }
+);
+
+const DEFAULT_SEQUENCES = [
+  {
+    id: 'seq_daily',
+    name: 'สวดมนต์ประจำวัน / ก่อนนอน',
+    prayerIds: ['p1', 'p2', 'p3', 'p4', 'p5', 'p7', 'p8', 'p9', 'p10', 'p15', 'p16', 'p17']
+  },
+  {
+    id: 'seq_fortune',
+    name: 'เสริมสิริมงคล เมตตามหาลาภ',
+    prayerIds: ['p3', 'p5', 'p12', 'p11', 'p13', 'p14', 'p15', 'p16', 'p17']
+  },
+  {
+    id: 'seq_short',
+    name: 'สวดสั้น ปลอดภัย คุ้มครอง',
+    prayerIds: ['p3', 'p7', 'p10', 'p15', 'p16']
+  }
+];
+
+const ONLINE_CLOUD_PRAYERS = [
+  {
+    id: 'cloud_1',
+    title: 'ธัมมจักกัปปวัตตนสูตร',
+    subtitle: 'ปฐมเทศนาแห่งพระพุทธองค์ - เสริมปัญญา บารมีธรรมอันยิ่งใหญ่',
+    category: 'paritta',
+    reps: 1,
+    verses: [
+      {
+        pali: 'เอวัมเม สุตัง, เอกัง สะมะยัง ภะคะวา, พาราณะสิยัง วิหะระติ อิสิปะตะเน มิคะทาเย...\nเทเว มนุสสานัง ปิยัง ภะวันตุ.',
+        thai: 'พระธรรมเทศนาแรกที่พระพุทธองค์ทรงแสดงธรรมโปรดปัญจวัคคีย์ ประกาศทางสายกลาง (มัชฌิมาปฏิปทา) และอริยสัจ ๔ ประการ'
+      }
+    ]
+  },
+  {
+    id: 'cloud_2',
+    title: 'โพชฌังคปริตร (บทสวดรักษาโรค)',
+    subtitle: 'โพชฌังโค สะติสังขาโต - สวดเพื่อปัดเป่าโรคภัยไข้เจ็บ เสริมธาตุขันธ์',
+    category: 'paritta',
+    reps: 3,
+    verses: [
+      {
+        pali: 'โพชฌังโค สะติสังขาโต ธัมมานัง วิจะโย ตะถา, วิริยัมปีติปัสสัทธิ โพชฌังคา จะ ตะถาปะเร,\nสะมาธุเปกขะโพชฌังคา สัตเตเต สัพพะทัสสินา, มุนินา สัมมะทักขาตา ภาวิตา พะหุลีกะตา,\nสังวัตตันติ อะภิญญายะ นิพพานายะ จะ โพธิยา, เอเตนะ สัจจะวัชเชนะ โสตถิ เต โหตุ สัพพะทาฯ',
+        thai: 'โพชฌงค์ ๗ ประการ มีสติสัมโพชฌงค์เป็นต้น พระมุนีเจ้าตรัสไว้ชอบแล้ว เป็นธรรมเครื่องตรัสรู้และระงับความทุกข์ ด้วยสัจจวาจานี้ ขอความสวัสดีจงมีแก่ท่านทุกเมื่อเทอญ'
+      }
+    ]
+  },
+  {
+    id: 'cloud_3',
+    title: 'รัตนสูตร (ปัดเป่าเสนียดจัญไรและภัยพิบัติ)',
+    subtitle: 'ยานีธะ ภูตานิ สะมาคะตานิ - บทสวดระงับภัยพิบัติ โรคระบาด และภูตผี',
+    category: 'paritta',
+    reps: 1,
+    verses: [
+      {
+        pali: 'ยานีธะ ภูตานิ สะมาคะตานิ ภุมมานิ วา ยานิวะ อันตะลิกเข, สัพเพวะ ภูตา สุมะนา ภะวันตุ อะโถปิ สักกัจจะ สุณันตุ ภาสิตัง...',
+        thai: 'ภูตเหล่าใดประชุมกัน ณ ที่นี้ ขอภูตทั้งปวงจงมีจิตยินดีและฟังภาษิตโดยเคารพ ขอความสวัสดีจงบังเกิดแก่หมู่สัตว์ทั้งปวง'
+      }
+    ]
+  },
+  {
+    id: 'cloud_4',
+    title: 'พระคาถาโพธิบาท (คาถาป้องกันภัย ๑๐ ทิศ)',
+    subtitle: 'บูรพารัสมิง พระพุทธะคุณัง - ป้องกันภยันตรายรอบทิศ',
+    category: 'sacred',
+    reps: 1,
+    verses: [
+      {
+        pali: 'บูรพารัสมิง พระพุทธะคุณัง, บูรพารัสมิง พระธัมเมตัง, บูรพารัสมิง พระสังฆานัง ทุกขะโรคะภะยัง วิวัญชัยเย สัพพะทุกข์ สัพพะโศก สัพพะโรค สัพพะภัย สัพพะเคราะห์ เสนียดจัญไร วิวัญชัยเยฯ',
+        thai: 'ขอพุทธคุณ ธรรมคุณ สังฆคุณ คุ้มครองทิศบูรพา ทิศอาคเนย์ ทิศทักษิณ ทิศหรดี ทิศประจิม ทิศพายัพ ทิศอุดร ทิศอีสาน ทิศเบื้องบน และทิศเบื้องล่าง ปัดเป่าสรรพทุกข์โศกโรคภัยทั้งปวง'
+      }
+    ]
+  },
+  {
+    id: 'cloud_5',
+    title: 'พระคาถาสุนทรีวาณี',
+    subtitle: 'มุนินทะ วะทะนัมพุชะ - เสริมสร้างสติปัญญา ความจำเป็นเลิศ การเรียนและการทำงาน',
+    category: 'sacred',
+    reps: 3,
+    verses: [
+      {
+        pali: 'มุนินทะ วะทะนัมพุชะ คัพภะสัมภะวะ สุนทะรี,\nปานีนัง สะระณัง วาณี มัยหัง ปิณะยะตัง มะนังฯ',
+        thai: 'นางสุนทรีวาณี (พระธรรมอันงดงาม) ผู้เกิดจากพระโอษฐ์อันเปรียบประดุจดอกบัวของพระมุนีเจ้า ผู้เป็นที่พึ่งของสัตว์ทั้งหลาย โปรดทำให้ใจของข้าพเจ้าแช่มชื่น เบิกบานด้วยปัญญาเทอญ'
+      }
+    ]
+  }
+];
+
+</script>
+  <script>
+/**
+ * Chanting Sequence App - Mobile & Desktop Compatible Controller
+ */
+
+// Safe Storage fallback for mobile webviews, file:// protocol, and private browsing modes
+const memoryStorage = {};
+const safeStorage = {
+  getItem: (key) => {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        return window.localStorage.getItem(key);
+      }
+    } catch (e) {
+      console.warn('Storage access warning:', e);
+    }
+    return memoryStorage[key] || null;
+  },
+  setItem: (key, val) => {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.setItem(key, val);
+      }
+    } catch (e) {
+      console.warn('Storage write warning:', e);
+    }
+    memoryStorage[key] = val;
+  }
+};
+
+let appState = {
+  library: [],
+  sequences: [],
+  activeSequenceId: 'seq_daily',
+  currentSequenceItems: [], // [{ id: 'p1', reps: 1 }, { id: 'p2', reps: 3 }]
+  currentStepIndex: 0,
+  currentRepCount: 0,
+  fontSizeScale: 1.0,
+  theme: 'dark',
+  isAutoScrolling: false,
+  scrollSpeed: 1.8,
+  activeTab: 'setup'
+};
+
+const STORAGE_KEYS = {
+  LIBRARY: 'chant_app_library_v5',
+  SEQUENCES: 'chant_app_sequences_v5',
+  ACTIVE_SEQ: 'chant_app_active_seq_v5',
+  ACTIVE_ITEMS: 'chant_app_active_items_v5',
+  SETTINGS: 'chant_app_settings_v5'
+};
+
+// Web Audio API Bell Synthesizer (Mobile-Safe)
+let audioCtx = null;
+function playBellSound() {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+
+    if (!audioCtx) {
+      audioCtx = new AudioContextClass();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+
+    const now = audioCtx.currentTime;
+    const freqs = [432, 864, 1296];
+    freqs.forEach((freq, idx) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, now);
+      const gainLevel = 0.25 / (idx + 1);
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.exponentialRampToValueAtTime(gainLevel, now + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.5);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 2.6);
+    });
+  } catch (err) {
+    console.log('Audio notice:', err);
+  }
+}
+
+// Unlock audio on first user touch (required on iOS/Safari and Android/Chrome)
+function unlockAudioOnMobile() {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (AudioContextClass && !audioCtx) {
+      audioCtx = new AudioContextClass();
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  } catch (e) {}
+}
+
+// Initialize Application Data
+function initData() {
+  const savedLibrary = safeStorage.getItem(STORAGE_KEYS.LIBRARY);
+  if (savedLibrary) {
+    try { appState.library = JSON.parse(savedLibrary); } catch (e) { appState.library = [...DEFAULT_PRAYERS]; }
+  } else {
+    appState.library = JSON.parse(JSON.stringify(DEFAULT_PRAYERS));
+  }
+
+  DEFAULT_PRAYERS.forEach(dp => {
+    if (!appState.library.some(p => p.id === dp.id)) {
+      appState.library.push(JSON.parse(JSON.stringify(dp)));
+    }
+  });
+
+  const savedSeqs = safeStorage.getItem(STORAGE_KEYS.SEQUENCES);
+  if (savedSeqs) {
+    try { appState.sequences = JSON.parse(savedSeqs); } catch (e) { appState.sequences = [...DEFAULT_SEQUENCES]; }
+  } else {
+    appState.sequences = JSON.parse(JSON.stringify(DEFAULT_SEQUENCES));
+  }
+
+  const savedActiveSeq = safeStorage.getItem(STORAGE_KEYS.ACTIVE_SEQ);
+  if (savedActiveSeq && appState.sequences.some(s => s.id === savedActiveSeq)) {
+    appState.activeSequenceId = savedActiveSeq;
+  } else if (appState.sequences.length > 0) {
+    appState.activeSequenceId = appState.sequences[0].id;
+  }
+
+  const savedActiveItems = safeStorage.getItem(STORAGE_KEYS.ACTIVE_ITEMS);
+  if (savedActiveItems) {
+    try {
+      appState.currentSequenceItems = JSON.parse(savedActiveItems);
+    } catch (e) {
+      loadSequenceItemsFromPreset(appState.activeSequenceId);
+    }
+  } else {
+    loadSequenceItemsFromPreset(appState.activeSequenceId);
+  }
+
+  const savedSettings = safeStorage.getItem(STORAGE_KEYS.SETTINGS);
+  if (savedSettings) {
+    try {
+      const parsed = JSON.parse(savedSettings);
+      appState.fontSizeScale = parsed.fontSizeScale || 1.0;
+      appState.theme = parsed.theme || 'dark';
+      appState.scrollSpeed = parsed.scrollSpeed || 1.8;
+    } catch (e) {}
+  }
+
+  saveAll();
+  applyTheme(appState.theme);
+  applyFontSize(appState.fontSizeScale);
+}
+
+function loadSequenceItemsFromPreset(seqId) {
+  const seq = appState.sequences.find(s => s.id === seqId) || appState.sequences[0];
+  if (seq && seq.prayerIds) {
+    appState.currentSequenceItems = seq.prayerIds.map(pid => {
+      const prayer = getPrayerById(pid);
+      return {
+        id: pid,
+        reps: prayer ? (prayer.reps || 1) : 1
+      };
+    });
+  } else {
+    appState.currentSequenceItems = [
+      { id: 'p1', reps: 1 },
+      { id: 'p2', reps: 1 },
+      { id: 'p3', reps: 3 },
+      { id: 'p4', reps: 1 },
+      { id: 'p5', reps: 1 }
+    ];
+  }
+}
+
+function saveAll() {
+  safeStorage.setItem(STORAGE_KEYS.LIBRARY, JSON.stringify(appState.library));
+  safeStorage.setItem(STORAGE_KEYS.SEQUENCES, JSON.stringify(appState.sequences));
+  safeStorage.setItem(STORAGE_KEYS.ACTIVE_SEQ, appState.activeSequenceId);
+  safeStorage.setItem(STORAGE_KEYS.ACTIVE_ITEMS, JSON.stringify(appState.currentSequenceItems));
+  safeStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify({
+    fontSizeScale: appState.fontSizeScale,
+    theme: appState.theme,
+    scrollSpeed: appState.scrollSpeed
+  }));
+}
+
+function getPrayerById(id) {
+  return appState.library.find(p => p.id === id);
+}
+
+function applyTheme(theme) {
+  appState.theme = theme;
+  document.documentElement.setAttribute('data-theme', theme);
+  saveAll();
+}
+
+function toggleTheme() {
+  const themes = ['dark', 'light', 'sepia'];
+  const nextIdx = (themes.indexOf(appState.theme) + 1) % themes.length;
+  applyTheme(themes[nextIdx]);
+}
+
+function applyFontSize(scale) {
+  appState.fontSizeScale = Math.max(0.8, Math.min(1.8, scale));
+  document.documentElement.style.setProperty('--font-scale', appState.fontSizeScale);
+  saveAll();
+}
+
+// -------------------------------------------------------------
+// UNIFIED SETUP & SEQUENCE MANAGER (หน้าเลือกบท ปรับลำดับ และตั้งจำนวนจบ)
+// -------------------------------------------------------------
+function renderUnifiedSetupScreen() {
+  const select = document.getElementById('select-active-preset');
+  if (select) {
+    select.innerHTML = '';
+    const customOpt = document.createElement('option');
+    customOpt.value = 'custom';
+    customOpt.innerText = '-- กำหนดและเลือกบทสวดด้วยตนเอง --';
+    select.appendChild(customOpt);
+
+    appState.sequences.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s.id;
+      opt.innerText = `ชุด: ${s.name} (${s.prayerIds.length} บท)`;
+      if (s.id === appState.activeSequenceId) opt.selected = true;
+      select.appendChild(opt);
+    });
+  }
+
+  const totalPrayers = appState.currentSequenceItems.length;
+  const totalReps = appState.currentSequenceItems.reduce((acc, cur) => acc + (parseInt(cur.reps) || 1), 0);
+  
+  const badge = document.getElementById('setup-total-badge');
+  if (badge) badge.innerText = `${totalPrayers} บท`;
+
+  const summary = document.getElementById('setup-total-reps-summary');
+  if (summary) summary.innerText = `รวมทั้งสิ้น ${totalReps} จบ`;
+
+  const container = document.getElementById('unified-sequence-list');
+  if (!container) return;
+  container.innerHTML = '';
+
+  if (totalPrayers === 0) {
+    container.innerHTML = `
+      <div class="card" style="text-align: center; color: var(--text-muted); padding: 2.5rem 1rem;">
+        <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-gold);">ยังไม่มีบทสวดในชุดนี้</div>
+        <p style="font-size: 0.85rem; margin-bottom: 1.25rem;">แตะปุ่มด้านล่างเพื่อเลือกบทสวดมนต์เข้าชุด</p>
+        <button type="button" class="btn btn-primary" onclick="openAddPrayerModal()">+ เลือกบทสวดมนต์จากคลัง</button>
+      </div>
+    `;
+    return;
+  }
+
+  appState.currentSequenceItems.forEach((item, index) => {
+    const prayer = getPrayerById(item.id);
+    if (!prayer) return;
+
+    const reps = item.reps || 1;
+    const card = document.createElement('div');
+    card.className = 'sequence-item-card';
+
+    card.innerHTML = `
+      <div class="sequence-item-header">
+        <div style="display: flex; align-items: center; gap: 0.65rem; overflow: hidden; flex: 1;">
+          <span style="font-size: 0.95rem; font-weight: bold; color: var(--text-gold); min-width: 24px;">${index + 1}.</span>
+          <div style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+            <div style="font-size: 1rem; font-weight: 600; color: var(--text-main);">${prayer.title}</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">${prayer.subtitle || ''}</div>
+          </div>
+        </div>
+
+        <div class="item-controls">
+          <button type="button" class="btn-action-sm" onclick="openEditPrayerModal('${prayer.id}')" title="แก้ไขคำสวดบทนี้">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+          </button>
+          <button type="button" class="btn-action-sm" onclick="moveSequenceItem(${index}, -1)" title="เลื่อนขึ้น" ${index === 0 ? 'disabled style="opacity:0.3;"' : ''}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+          </button>
+          <button type="button" class="btn-action-sm" onclick="moveSequenceItem(${index}, 1)" title="เลื่อนลง" ${index === totalPrayers - 1 ? 'disabled style="opacity:0.3;"' : ''}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <button type="button" class="btn-action-sm" onclick="removeSequenceItem(${index})" title="ลบออกจากชุด" style="color: #ef4444;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="sequence-item-bottom">
+        <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 500;">สวดจำนวน:</span>
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+          <div class="rep-stepper">
+            <button type="button" class="rep-stepper-btn" onclick="changeItemReps(${index}, -1)" title="ลดจำนวนจบ">−</button>
+            <span class="rep-stepper-value">${reps} จบ</span>
+            <button type="button" class="rep-stepper-btn" onclick="changeItemReps(${index}, 1)" title="เพิ่มจำนวนจบ">+</button>
+          </div>
+          <div style="display: flex; gap: 0.2rem;">
+            <button type="button" class="btn btn-secondary btn-sm" style="padding: 0.2rem 0.45rem; font-size: 0.72rem;" onclick="setItemRepsQuick(${index}, 1)">1</button>
+            <button type="button" class="btn btn-secondary btn-sm" style="padding: 0.2rem 0.45rem; font-size: 0.72rem;" onclick="setItemRepsQuick(${index}, 3)">3</button>
+            <button type="button" class="btn btn-secondary btn-sm" style="padding: 0.2rem 0.45rem; font-size: 0.72rem;" onclick="setItemRepsQuick(${index}, 9)">9</button>
+            <button type="button" class="btn btn-secondary btn-sm" style="padding: 0.2rem 0.45rem; font-size: 0.72rem;" onclick="setItemRepsQuick(${index}, 108)">108</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+function changeItemReps(index, delta) {
+  if (!appState.currentSequenceItems[index]) return;
+  let cur = parseInt(appState.currentSequenceItems[index].reps) || 1;
+  cur = Math.max(1, Math.min(1000, cur + delta));
+  appState.currentSequenceItems[index].reps = cur;
+  saveAll();
+  renderUnifiedSetupScreen();
+}
+
+function setItemRepsQuick(index, reps) {
+  if (!appState.currentSequenceItems[index]) return;
+  appState.currentSequenceItems[index].reps = reps;
+  saveAll();
+  renderUnifiedSetupScreen();
+}
+
+function moveSequenceItem(index, direction) {
+  const targetIndex = index + direction;
+  if (targetIndex < 0 || targetIndex >= appState.currentSequenceItems.length) return;
+
+  const temp = appState.currentSequenceItems[index];
+  appState.currentSequenceItems[index] = appState.currentSequenceItems[targetIndex];
+  appState.currentSequenceItems[targetIndex] = temp;
+
+  saveAll();
+  renderUnifiedSetupScreen();
+}
+
+function removeSequenceItem(index) {
+  appState.currentSequenceItems.splice(index, 1);
+  saveAll();
+  renderUnifiedSetupScreen();
+}
+
+function startChantingFromSetup() {
+  if (!appState.currentSequenceItems || appState.currentSequenceItems.length === 0) {
+    alert('กรุณาเลือกบทสวดอย่างน้อย 1 บทก่อนเริ่มสวดมนต์');
+    return;
+  }
+  unlockAudioOnMobile();
+  appState.currentStepIndex = 0;
+  appState.currentRepCount = 0;
+  switchTab('chant');
+}
+
+// -------------------------------------------------------------
+// ADD PRAYER PICKER MODAL
+// -------------------------------------------------------------
+let pickerSearchQuery = '';
+
+function openAddPrayerModal() {
+  pickerSearchQuery = '';
+  const searchInput = document.getElementById('modal-picker-search');
+  if (searchInput) searchInput.value = '';
+  renderAddPrayerPicker();
+  openModal('modal-add-prayer-picker');
+}
+
+function renderAddPrayerPicker() {
+  const container = document.getElementById('modal-picker-list');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const filtered = appState.library.filter(p => {
+    if (!pickerSearchQuery) return true;
+    return p.title.toLowerCase().includes(pickerSearchQuery) ||
+           (p.subtitle && p.subtitle.toLowerCase().includes(pickerSearchQuery));
+  });
+
+  filtered.forEach(p => {
+    const isAlreadyInSeq = appState.currentSequenceItems.some(item => item.id === p.id);
+    const div = document.createElement('div');
+    div.className = 'sequence-item';
+    div.style.padding = '0.75rem';
+
+    div.innerHTML = `
+      <div style="flex: 1; overflow: hidden;">
+        <div style="font-size: 0.95rem; font-weight: 600; color: var(--text-main);">${p.title}</div>
+        <div style="font-size: 0.76rem; color: var(--text-muted); text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+          ${p.subtitle || ''}
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.3rem;">
+        <button type="button" class="btn btn-secondary btn-sm" onclick="viewPrayerDetails('${p.id}')">ดู</button>
+        <button type="button" class="btn ${isAlreadyInSeq ? 'btn-secondary' : 'btn-primary'} btn-sm" onclick="addPrayerToActiveSeq('${p.id}')">
+          ${isAlreadyInSeq ? '+ เพิ่มซ้ำ' : '+ เพิ่ม'}
+        </button>
+      </div>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+function addPrayerToActiveSeq(prayerId) {
+  const prayer = getPrayerById(prayerId);
+  const defaultReps = prayer ? (prayer.reps || 1) : 1;
+  appState.currentSequenceItems.push({
+    id: prayerId,
+    reps: defaultReps
+  });
+  saveAll();
+  renderUnifiedSetupScreen();
+  renderAddPrayerPicker();
+}
+
+// -------------------------------------------------------------
+// CHANTING READER MODE (หน้าอ่านสวดมนต์)
+// -------------------------------------------------------------
+function renderChantingReader() {
+  if (!appState.currentSequenceItems || appState.currentSequenceItems.length === 0) {
+    switchTab('setup');
+    return;
+  }
+
+  if (appState.currentStepIndex >= appState.currentSequenceItems.length) {
+    appState.currentStepIndex = 0;
+  }
+  if (appState.currentStepIndex < 0) {
+    appState.currentStepIndex = 0;
+  }
+
+  const currentItem = appState.currentSequenceItems[appState.currentStepIndex];
+  const prayer = getPrayerById(currentItem.id);
+
+  const total = appState.currentSequenceItems.length;
+  const current = appState.currentStepIndex + 1;
+  const seqNameEl = document.getElementById('chant-sequence-name');
+  if (seqNameEl) seqNameEl.innerText = `ลำดับการสวด (${total} บท)`;
+
+  const stepIndEl = document.getElementById('chant-step-indicator');
+  if (stepIndEl) stepIndEl.innerText = `บทที่ ${current} / ${total}`;
+
+  const pct = Math.round((current / total) * 100);
+  const progFill = document.getElementById('chant-progress-fill');
+  if (progFill) progFill.style.width = `${pct}%`;
+
+  if (!prayer) {
+    document.getElementById('reader-title').innerText = 'ไม่พบบทสวดนี้';
+    document.getElementById('reader-content').innerHTML = '';
+    return;
+  }
+
+  document.getElementById('reader-title').innerText = prayer.title;
+  document.getElementById('reader-subtitle').innerText = prayer.subtitle || '';
+
+  const editBtn = document.getElementById('btn-reader-edit-current');
+  if (editBtn) {
+    editBtn.onclick = () => openEditPrayerModal(prayer.id);
+  }
+
+  const repBox = document.getElementById('repetition-box');
+  const targetReps = currentItem.reps || prayer.reps || 1;
+  if (targetReps > 1) {
+    repBox.style.display = 'flex';
+    document.getElementById('target-reps-text').innerText = targetReps;
+    document.getElementById('current-rep-status').innerText = `สวดไปแล้ว ${appState.currentRepCount} / ${targetReps} จบ`;
+  } else {
+    repBox.style.display = 'none';
+  }
+
+  let html = '';
+  if (prayer.verses && prayer.verses.length > 0) {
+    prayer.verses.forEach(v => {
+      html += `
+        <div class="verse-block">
+          <div class="pali-verse">${v.pali.replace(/\n/g, '<br>')}</div>
+          ${v.thai ? `<div class="thai-meaning">${v.thai.replace(/\n/g, '<br>')}</div>` : ''}
+        </div>
+      `;
+    });
+  } else {
+    html = `<div class="pali-verse">ไม่มีเนื้อหาบทสวด</div>`;
+  }
+  document.getElementById('reader-content').innerHTML = html;
+
+  const prevBtn = document.getElementById('btn-prev-prayer');
+  const nextBtn = document.getElementById('btn-next-prayer');
+  if (prevBtn) {
+    prevBtn.disabled = appState.currentStepIndex === 0;
+    prevBtn.style.opacity = appState.currentStepIndex === 0 ? '0.4' : '1';
+  }
+
+  if (nextBtn) {
+    if (appState.currentStepIndex === total - 1) {
+      nextBtn.innerHTML = `<span>สวดจบชุด อนุโมทนา 🙏</span>`;
+    } else {
+      nextBtn.innerHTML = `<span>บทถัดไป</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>`;
+    }
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextPrayer() {
+  if (!appState.currentSequenceItems) return;
+
+  if (appState.currentStepIndex < appState.currentSequenceItems.length - 1) {
+    appState.currentStepIndex++;
+    appState.currentRepCount = 0;
+    playBellSound();
+    renderChantingReader();
+  } else {
+    playBellSound();
+    alert('🎉 ขออนุโมทนาบุญ สาธุ! ท่านได้สวดมนต์ครบตามลำดับเรียบร้อยแล้ว');
+    appState.currentStepIndex = 0;
+    appState.currentRepCount = 0;
+    renderChantingReader();
+  }
+}
+
+function prevPrayer() {
+  if (appState.currentStepIndex > 0) {
+    appState.currentStepIndex--;
+    appState.currentRepCount = 0;
+    renderChantingReader();
+  }
+}
+
+function incrementCounter() {
+  const currentItem = appState.currentSequenceItems[appState.currentStepIndex];
+  const prayer = getPrayerById(currentItem.id);
+  const target = currentItem.reps || (prayer ? prayer.reps : 1) || 1;
+
+  appState.currentRepCount++;
+  document.getElementById('current-rep-status').innerText = `สวดไปแล้ว ${appState.currentRepCount} / ${target} จบ`;
+  
+  try {
+    if (navigator && navigator.vibrate) {
+      navigator.vibrate(40);
+    }
+  } catch (e) {}
+
+  if (appState.currentRepCount >= target) {
+    playBellSound();
+    if (appState.currentRepCount === target) {
+      setTimeout(() => {
+        if (confirm(`สวดครบ ${target} จบแล้ว ต้องการไปบทถัดไปหรือไม่?`)) {
+          nextPrayer();
+        }
+      }, 100);
+    }
+  }
+}
+
+function resetCounter() {
+  appState.currentRepCount = 0;
+  const currentItem = appState.currentSequenceItems[appState.currentStepIndex];
+  const prayer = getPrayerById(currentItem.id);
+  const target = currentItem.reps || (prayer ? prayer.reps : 1) || 1;
+  document.getElementById('current-rep-status').innerText = `สวดไปแล้ว 0 / ${target} จบ`;
+}
+
+// Auto Scroll Functions
+let autoScrollTimer = null;
+function toggleAutoScroll() {
+  appState.isAutoScrolling = !appState.isAutoScrolling;
+  const btn = document.getElementById('btn-autoscroll');
+  const label = document.getElementById('label-autoscroll');
+  if (appState.isAutoScrolling) {
+    if (btn) {
+      btn.style.backgroundColor = 'var(--gold-primary)';
+      btn.style.color = '#fff';
+    }
+    if (label) label.innerText = 'หยุดเลื่อน';
+    startAutoScroll();
+  } else {
+    if (btn) {
+      btn.style.backgroundColor = '';
+      btn.style.color = '';
+    }
+    if (label) label.innerText = 'เลื่อนอัตโนมัติ';
+    stopAutoScroll();
+  }
+}
+
+function startAutoScroll() {
+  stopAutoScroll();
+  const speed = parseFloat(appState.scrollSpeed) || 1.8;
+  const interval = Math.max(20, Math.floor(50 / speed));
+  autoScrollTimer = setInterval(() => {
+    window.scrollBy({ top: 1, behavior: 'auto' });
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 80) {
+      stopAutoScroll();
+      appState.isAutoScrolling = false;
+      const btn = document.getElementById('btn-autoscroll');
+      const label = document.getElementById('label-autoscroll');
+      if (btn) { btn.style.backgroundColor = ''; btn.style.color = ''; }
+      if (label) label.innerText = 'เลื่อนอัตโนมัติ';
+    }
+  }, interval);
+}
+
+function stopAutoScroll() {
+  if (autoScrollTimer) {
+    clearInterval(autoScrollTimer);
+    autoScrollTimer = null;
+  }
+}
+
+// -------------------------------------------------------------
+// PRAYER EDITING FUNCTIONALITY (แก้ไขคำสวด)
+// -------------------------------------------------------------
+function openEditPrayerModal(prayerId) {
+  const prayer = getPrayerById(prayerId);
+  if (!prayer) return;
+
+  document.getElementById('edit-prayer-id').value = prayer.id;
+  document.getElementById('edit-prayer-title').value = prayer.title;
+  document.getElementById('edit-prayer-subtitle').value = prayer.subtitle || '';
+  document.getElementById('edit-prayer-reps').value = prayer.reps || 1;
+
+  const container = document.getElementById('edit-verses-container');
+  if (container) {
+    container.innerHTML = '';
+    if (prayer.verses && prayer.verses.length > 0) {
+      prayer.verses.forEach(v => addEditVerseBlock(v.pali, v.thai));
+    } else {
+      addEditVerseBlock('', '');
+    }
+  }
+
+  const originalDefault = DEFAULT_PRAYERS.find(p => p.id === prayer.id) || ONLINE_CLOUD_PRAYERS.find(p => p.id === prayer.id);
+  const resetBtn = document.getElementById('btn-reset-default-prayer');
+  if (resetBtn) {
+    if (originalDefault) {
+      resetBtn.style.display = 'inline-flex';
+      resetBtn.onclick = () => {
+        if (confirm(`คุณต้องการคืนค่าบทสวด "${originalDefault.title}" เป็นข้อความดั้งเดิมหรือไม่?`)) {
+          const target = appState.library.find(p => p.id === prayer.id);
+          if (target) {
+            target.title = originalDefault.title;
+            target.subtitle = originalDefault.subtitle;
+            target.reps = originalDefault.reps;
+            target.verses = JSON.parse(JSON.stringify(originalDefault.verses));
+            saveAll();
+            alert('คืนค่าข้อความเริ่มต้นเรียบร้อยแล้ว!');
+            closeModal('modal-edit-prayer');
+            refreshCurrentActiveView();
+          }
+        }
+      };
+    } else {
+      resetBtn.style.display = 'none';
+    }
+  }
+
+  openModal('modal-edit-prayer');
+}
+
+function addEditVerseBlock(paliText = '', thaiText = '') {
+  const container = document.getElementById('edit-verses-container');
+  if (!container) return;
+  const block = document.createElement('div');
+  block.className = 'edit-verse-row card';
+  block.style.padding = '0.75rem';
+  block.style.marginBottom = '0.75rem';
+  block.style.background = 'var(--bg-main)';
+
+  block.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+      <span style="font-size: 0.8rem; font-weight: bold; color: var(--text-gold);">ท่อนบทสวด</span>
+      <button type="button" class="btn-action-sm" onclick="this.closest('.edit-verse-row').remove()" title="ลบท่อนนี้" style="width: 24px; height: 24px; color: #ef4444;">✕</button>
+    </div>
+    <label style="font-size: 0.78rem; color: var(--text-muted);">คำสวดบาลี / บทสวด:</label>
+    <textarea class="input-field edit-verse-pali" style="min-height: 70px; margin-bottom: 0.4rem; font-weight: 500;" placeholder="คำสวด...">${paliText}</textarea>
+    <label style="font-size: 0.78rem; color: var(--text-muted);">คำแปลไทย (ถ้ามี):</label>
+    <textarea class="input-field edit-verse-thai" style="min-height: 50px; margin-bottom: 0;" placeholder="คำแปล...">${thaiText}</textarea>
+  `;
+  container.appendChild(block);
+}
+
+function saveEditedPrayer(e) {
+  e.preventDefault();
+  const prayerId = document.getElementById('edit-prayer-id').value;
+  const prayer = getPrayerById(prayerId);
+  if (!prayer) return;
+
+  const newTitle = document.getElementById('edit-prayer-title').value.trim();
+  const newSubtitle = document.getElementById('edit-prayer-subtitle').value.trim();
+  const newReps = parseInt(document.getElementById('edit-prayer-reps').value) || 1;
+
+  const verseRows = document.querySelectorAll('.edit-verse-row');
+  const newVerses = [];
+
+  verseRows.forEach(row => {
+    const pali = row.querySelector('.edit-verse-pali').value.trim();
+    const thai = row.querySelector('.edit-verse-thai').value.trim();
+    if (pali) {
+      newVerses.push({ pali: pali, thai: thai });
+    }
+  });
+
+  if (newVerses.length === 0) {
+    alert('กรุณากรอกคำสวดบาลีอย่างน้อย 1 ท่อน');
+    return;
+  }
+
+  prayer.title = newTitle;
+  prayer.subtitle = newSubtitle;
+  prayer.reps = newReps;
+  prayer.verses = newVerses;
+
+  saveAll();
+  closeModal('modal-edit-prayer');
+  alert(`บันทึกการแก้ไข "${prayer.title}" เรียบร้อยแล้ว!`);
+  refreshCurrentActiveView();
+}
+
+function refreshCurrentActiveView() {
+  if (appState.activeTab === 'setup') renderUnifiedSetupScreen();
+  else if (appState.activeTab === 'chant') renderChantingReader();
+  else if (appState.activeTab === 'library') renderLibraryTab();
+}
+
+// -------------------------------------------------------------
+// TAB 3: LIBRARY
+// -------------------------------------------------------------
+let currentLibraryCategory = 'all';
+let currentLibrarySearch = '';
+
+function renderLibraryTab() {
+  const container = document.getElementById('library-list');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const filtered = appState.library.filter(p => {
+    const matchCat = currentLibraryCategory === 'all' || p.category === currentLibraryCategory;
+    const matchSearch = !currentLibrarySearch || 
+      p.title.toLowerCase().includes(currentLibrarySearch.toLowerCase()) ||
+      (p.subtitle && p.subtitle.toLowerCase().includes(currentLibrarySearch.toLowerCase())) ||
+      (p.verses && p.verses.some(v => v.pali.toLowerCase().includes(currentLibrarySearch.toLowerCase())));
+    return matchCat && matchSearch;
+  });
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="card" style="text-align: center; color: var(--text-muted); padding: 2rem 1rem;">
+        ไม่พบบทสวดตามคำค้นหา
+      </div>
+    `;
+    return;
+  }
+
+  filtered.forEach(p => {
+    const isAlreadyInSeq = appState.currentSequenceItems.some(item => item.id === p.id);
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.padding = '1rem 1.15rem';
+    card.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+        <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-gold);">${p.title}</h3>
+        <span class="badge badge-secondary">${getCategoryName(p.category)}</span>
+      </div>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.85rem; line-height: 1.4;">
+        ${p.subtitle || (p.verses && p.verses[0] ? p.verses[0].pali.substring(0, 70) + '...' : '')}
+      </p>
+      <div style="display: flex; gap: 0.35rem;">
+        <button type="button" class="btn btn-secondary btn-sm" style="flex: 1;" onclick="viewPrayerDetails('${p.id}')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>ดูเนื้อหา</span>
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm" style="flex: 0.9;" onclick="openEditPrayerModal('${p.id}')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+          <span>แก้ไข</span>
+        </button>
+        <button type="button" class="btn ${isAlreadyInSeq ? 'btn-secondary' : 'btn-primary'} btn-sm" style="flex: 1.1;" onclick="addPrayerToActiveSeq('${p.id}')">
+          ${isAlreadyInSeq ? '<span>+ เพิ่มซ้ำ</span>' : '<span>+ เพิ่มเข้าชุด</span>'}
+        </button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function getCategoryName(cat) {
+  const map = {
+    intro: 'บทเริ่มต้น',
+    paritta: 'พระปริตร/ชัยมงคล',
+    sacred: 'พระคาถาสำคัญ',
+    metta: 'แผ่เมตตา/อุทิศบุญ',
+    custom: 'สร้างเอง'
+  };
+  return map[cat] || 'บทสวดมนต์';
+}
+
+function viewPrayerDetails(prayerId) {
+  const prayer = getPrayerById(prayerId);
+  if (!prayer) return;
+
+  document.getElementById('modal-detail-title').innerText = prayer.title;
+  document.getElementById('modal-detail-subtitle').innerText = prayer.subtitle || '';
+
+  let html = '';
+  prayer.verses.forEach(v => {
+    html += `
+      <div class="verse-block">
+        <div class="pali-verse">${v.pali.replace(/\n/g, '<br>')}</div>
+        ${v.thai ? `<div class="thai-meaning">${v.thai.replace(/\n/g, '<br>')}</div>` : ''}
+      </div>
+    `;
+  });
+  document.getElementById('modal-detail-content').innerHTML = html;
+
+  document.getElementById('btn-modal-edit-prayer-direct').onclick = () => {
+    closeModal('modal-prayer-details');
+    openEditPrayerModal(prayer.id);
+  };
+
+  document.getElementById('btn-modal-add-to-active-seq').onclick = () => {
+    addPrayerToActiveSeq(prayer.id);
+    closeModal('modal-prayer-details');
+    switchTab('setup');
+  };
+
+  openModal('modal-prayer-details');
+}
+
+// -------------------------------------------------------------
+// TAB 4: ONLINE SEARCH & CUSTOM PRAYER
+// -------------------------------------------------------------
+function renderOnlineSearch() {
+  const searchInput = document.getElementById('online-search-input');
+  const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+  const container = document.getElementById('online-results-list');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const results = ONLINE_CLOUD_PRAYERS.filter(p => {
+    if (!query) return true;
+    return p.title.toLowerCase().includes(query) ||
+           (p.subtitle && p.subtitle.toLowerCase().includes(query));
+  });
+
+  if (results.length === 0) {
+    container.innerHTML = `
+      <div style="text-align: center; color: var(--text-muted); padding: 1.5rem 0.5rem;">
+        ไม่พบบทสวดในคลังออนไลน์ตามคำค้นหานี้
+      </div>
+    `;
+    return;
+  }
+
+  results.forEach(p => {
+    const isAlreadyDownloaded = appState.library.some(local => local.id === p.id || local.title === p.title);
+    const div = document.createElement('div');
+    div.className = 'sequence-item';
+    div.style.padding = '0.85rem';
+    div.innerHTML = `
+      <div style="flex: 1; overflow: hidden;">
+        <div style="font-size: 0.95rem; font-weight: 600; color: var(--text-gold);">${p.title}</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">${p.subtitle}</div>
+      </div>
+      <div>
+        ${isAlreadyDownloaded 
+          ? `<span class="badge" style="background: rgba(34,197,94,0.15); color: #22c55e;">มีในเครื่องแล้ว</span>` 
+          : `<button type="button" class="btn btn-primary btn-sm" onclick="downloadOnlinePrayer('${p.id}')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>ดาวน์โหลด</span>
+             </button>`
+        }
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function downloadOnlinePrayer(cloudId) {
+  const prayer = ONLINE_CLOUD_PRAYERS.find(p => p.id === cloudId);
+  if (!prayer) return;
+
+  if (appState.library.some(p => p.id === prayer.id)) {
+    alert('บทสวดนี้มีอยู่ในเครื่องแล้ว');
+    return;
+  }
+
+  appState.library.push(JSON.parse(JSON.stringify(prayer)));
+  saveAll();
+  renderOnlineSearch();
+  alert(`ดาวน์โหลด "${prayer.title}" ลงเครื่องเรียบร้อยแล้ว! สามารถเลือกและจัดลำดับสวดแบบออฟไลน์ได้ทันที`);
+}
+
+// Drawer Jump Modal
+function openSequenceDrawer() {
+  const list = document.getElementById('drawer-prayers-list');
+  if (!list) return;
+  list.innerHTML = '';
+
+  appState.currentSequenceItems.forEach((item, idx) => {
+    const prayer = getPrayerById(item.id);
+    if (!prayer) return;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `btn btn-secondary ${idx === appState.currentStepIndex ? 'btn-primary' : ''}`;
+    btn.style.justifyContent = 'flex-start';
+    btn.style.textAlign = 'left';
+    btn.innerHTML = `<span style="opacity: 0.8; font-weight: bold; margin-right: 0.5rem;">${idx + 1}.</span> <span>${prayer.title} (${item.reps || 1} จบ)</span>`;
+    btn.onclick = () => {
+      appState.currentStepIndex = idx;
+      appState.currentRepCount = 0;
+      closeModal('modal-sequence-drawer');
+      renderChantingReader();
+    };
+    list.appendChild(btn);
+  });
+
+  openModal('modal-sequence-drawer');
+}
+
+function openModal(id) {
+  const m = document.getElementById(id);
+  if (m) m.classList.add('open');
+}
+
+function closeModal(id) {
+  const m = document.getElementById(id);
+  if (m) m.classList.remove('open');
+}
+
+function switchTab(tabId) {
+  unlockAudioOnMobile();
+  appState.activeTab = tabId;
+  document.querySelectorAll('.tab-screen').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+  const targetTab = document.getElementById(`tab-${tabId}`);
+  if (targetTab) targetTab.classList.add('active');
+
+  const navBtn = document.querySelector(`.nav-item[data-tab="${tabId}"]`);
+  if (navBtn) navBtn.classList.add('active');
+
+  if (tabId === 'setup') renderUnifiedSetupScreen();
+  if (tabId === 'chant') renderChantingReader();
+  if (tabId === 'library') renderLibraryTab();
+  if (tabId === 'online') renderOnlineSearch();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateNetworkStatus() {
+  const badge = document.getElementById('network-status');
+  if (!badge) return;
+  if (navigator && navigator.onLine) {
+    badge.className = 'network-badge network-online';
+    badge.innerHTML = `<span style="width: 8px; height: 8px; border-radius: 50%; background: currentColor;"></span><span>ออนไลน์ (พร้อมค้นหา)</span>`;
+  } else {
+    badge.className = 'network-badge network-offline';
+    badge.innerHTML = `<span style="width: 8px; height: 8px; border-radius: 50%; background: currentColor;"></span><span>ออฟไลน์ (ใช้งานจากเครื่อง)</span>`;
+  }
+}
+
+// Setup Event Listeners
+function setupEventListeners() {
+  document.querySelectorAll('.nav-item').forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+  });
+
+  const bellBtn = document.getElementById('btn-bell');
+  if (bellBtn) bellBtn.addEventListener('click', playBellSound);
+
+  const themeBtn = document.getElementById('btn-theme');
+  if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+
+  const fontIncBtn = document.getElementById('btn-font-inc');
+  if (fontIncBtn) fontIncBtn.addEventListener('click', () => applyFontSize(appState.fontSizeScale + 0.1));
+
+  const fontDecBtn = document.getElementById('btn-font-dec');
+  if (fontDecBtn) fontDecBtn.addEventListener('click', () => applyFontSize(appState.fontSizeScale - 0.1));
+
+  // Unified Setup Events
+  const presetSelect = document.getElementById('select-active-preset');
+  if (presetSelect) {
+    presetSelect.addEventListener('change', (e) => {
+      const val = e.target.value;
+      if (val !== 'custom') {
+        appState.activeSequenceId = val;
+        loadSequenceItemsFromPreset(val);
+        saveAll();
+        renderUnifiedSetupScreen();
+      }
+    });
+  }
+
+  const addPrayerBtn = document.getElementById('btn-open-add-prayer-modal');
+  if (addPrayerBtn) addPrayerBtn.addEventListener('click', openAddPrayerModal);
+
+  const startChantBtn = document.getElementById('btn-start-chanting-main');
+  if (startChantBtn) startChantBtn.addEventListener('click', startChantingFromSetup);
+
+  const clearAllBtn = document.getElementById('btn-clear-all-seq');
+  if (clearAllBtn) {
+    clearAllBtn.addEventListener('click', () => {
+      if (confirm('คุณต้องการล้างรายการบทสวดทั้งหมดในชุดนี้หรือไม่?')) {
+        appState.currentSequenceItems = [];
+        saveAll();
+        renderUnifiedSetupScreen();
+      }
+    });
+  }
+
+  const saveNewSeqBtn = document.getElementById('btn-save-as-new-seq');
+  if (saveNewSeqBtn) {
+    saveNewSeqBtn.addEventListener('click', () => {
+      if (appState.currentSequenceItems.length === 0) {
+        alert('ไม่มีบทสวดในรายการ');
+        return;
+      }
+      const name = prompt('ตั้งชื่อชุดบทสวดมนต์นี้:', 'ชุดสวดมนต์ของฉัน');
+      if (name && name.trim()) {
+        const newSeq = {
+          id: `seq_${Date.now()}`,
+          name: name.trim(),
+          prayerIds: appState.currentSequenceItems.map(it => it.id)
+        };
+        appState.sequences.push(newSeq);
+        appState.activeSequenceId = newSeq.id;
+        saveAll();
+        alert(`บันทึกชุด "${name.trim()}" เรียบร้อยแล้ว!`);
+        renderUnifiedSetupScreen();
+      }
+    });
+  }
+
+  // Modal Picker Search
+  const pickerSearch = document.getElementById('modal-picker-search');
+  if (pickerSearch) {
+    pickerSearch.addEventListener('input', (e) => {
+      pickerSearchQuery = e.target.value.toLowerCase().trim();
+      renderAddPrayerPicker();
+    });
+  }
+
+  // Chanting Screen Controls
+  const nextBtn = document.getElementById('btn-next-prayer');
+  if (nextBtn) nextBtn.addEventListener('click', nextPrayer);
+
+  const prevBtn = document.getElementById('btn-prev-prayer');
+  if (prevBtn) prevBtn.addEventListener('click', prevPrayer);
+
+  const countRepBtn = document.getElementById('btn-count-rep');
+  if (countRepBtn) countRepBtn.addEventListener('click', incrementCounter);
+
+  const resetRepBtn = document.getElementById('btn-reset-rep');
+  if (resetRepBtn) resetRepBtn.addEventListener('click', resetCounter);
+
+  const autoScrollBtn = document.getElementById('btn-autoscroll');
+  if (autoScrollBtn) autoScrollBtn.addEventListener('click', toggleAutoScroll);
+
+  const scrollSpeedSelect = document.getElementById('select-scroll-speed');
+  if (scrollSpeedSelect) {
+    scrollSpeedSelect.addEventListener('change', (e) => {
+      appState.scrollSpeed = parseFloat(e.target.value);
+      saveAll();
+      if (appState.isAutoScrolling) startAutoScroll();
+    });
+  }
+
+  const drawerBtn = document.getElementById('btn-sequence-drawer');
+  if (drawerBtn) drawerBtn.addEventListener('click', openSequenceDrawer);
+
+  // Edit Prayer Form & Add Verse
+  const editForm = document.getElementById('form-edit-prayer');
+  if (editForm) editForm.addEventListener('submit', saveEditedPrayer);
+
+  const addVerseBtn = document.getElementById('btn-add-edit-verse');
+  if (addVerseBtn) addVerseBtn.addEventListener('click', () => addEditVerseBlock('', ''));
+
+  // Library tab events
+  const libSearch = document.getElementById('library-search');
+  if (libSearch) {
+    libSearch.addEventListener('input', (e) => {
+      currentLibrarySearch = e.target.value;
+      renderLibraryTab();
+    });
+  }
+
+  document.querySelectorAll('#library-categories .category-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('#library-categories .category-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      currentLibraryCategory = pill.dataset.cat;
+      renderLibraryTab();
+    });
+  });
+
+  // Online search & custom prayer form
+  const onlineSearchInput = document.getElementById('online-search-input');
+  if (onlineSearchInput) onlineSearchInput.addEventListener('input', renderOnlineSearch);
+
+  const customPrayerForm = document.getElementById('form-custom-prayer');
+  if (customPrayerForm) {
+    customPrayerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('custom-title').value.trim();
+      const cat = document.getElementById('custom-category').value;
+      const pali = document.getElementById('custom-pali').value.trim();
+      const thai = document.getElementById('custom-thai').value.trim();
+      const reps = parseInt(document.getElementById('custom-reps').value) || 1;
+
+      if (!title || !pali) return;
+
+      const newPrayer = {
+        id: `custom_${Date.now()}`,
+        title: title,
+        subtitle: thai ? thai.substring(0, 60) + '...' : 'บทสวดกำหนดเอง',
+        category: cat,
+        reps: reps,
+        verses: [
+          { pali: pali, thai: thai }
+        ]
+      };
+
+      appState.library.push(newPrayer);
+      appState.currentSequenceItems.push({ id: newPrayer.id, reps: reps });
+      saveAll();
+
+      alert(`บันทึก "${title}" เข้าคลังและเพิ่มในรายการสวดเรียบร้อยแล้ว!`);
+      customPrayerForm.reset();
+      switchTab('setup');
+    });
+  }
+
+  // Backup & Restore
+  const exportBtn = document.getElementById('btn-export-backup');
+  if (exportBtn) {
+    exportBtn.addEventListener('click', () => {
+      const backupData = {
+        version: 5,
+        date: new Date().toISOString(),
+        library: appState.library,
+        sequences: appState.sequences,
+        currentSequenceItems: appState.currentSequenceItems
+      };
+      const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(backupData, null, 2));
+      const a = document.createElement('a');
+      a.setAttribute('href', dataStr);
+      a.setAttribute('download', `chanting_backup_${Date.now()}.json`);
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+  }
+
+  const importInput = document.getElementById('input-import-backup');
+  if (importInput) {
+    importInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const data = JSON.parse(event.target.result);
+          if (data.library && data.sequences) {
+            appState.library = data.library;
+            appState.sequences = data.sequences;
+            if (data.currentSequenceItems) appState.currentSequenceItems = data.currentSequenceItems;
+            saveAll();
+            alert('นำเข้าข้อมูลสำเร็จ!');
+            location.reload();
+          } else {
+            alert('รูปแบบไฟล์ไม่ถูกต้อง');
+          }
+        } catch (err) {
+          alert('เกิดข้อผิดพลาดในการอ่านไฟล์');
+        }
+      };
+      reader.readAsText(file);
+    });
+  }
+
+  // Close modals
+  document.querySelectorAll('.btn-close-modal').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('open'));
+    });
+  });
+
+  document.querySelectorAll('.modal-overlay').forEach(m => {
+    m.addEventListener('click', (e) => {
+      if (e.target === m) m.classList.remove('open');
+    });
+  });
+
+  window.addEventListener('online', updateNetworkStatus);
+  window.addEventListener('offline', updateNetworkStatus);
+  document.addEventListener('touchstart', unlockAudioOnMobile, { once: true, passive: true });
+}
+
+// Service Worker - ONLY registered on valid http/https origins (avoids SecurityError crash on file:// on mobile)
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || (location.protocol === 'http:' && (location.hostname === 'localhost' || location.hostname === '127.0.0.1')))) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').then((reg) => {
+      console.log('ServiceWorker registered:', reg.scope);
+    }).catch((err) => {
+      console.log('ServiceWorker notice:', err);
+    });
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  initData();
+  setupEventListeners();
+  updateNetworkStatus();
+  renderUnifiedSetupScreen();
+});
+
+</script>
+</body>
+</html>

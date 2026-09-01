@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e150a"/>
+      <stop offset="50%" stop-color="#0e1320"/>
+      <stop offset="100%" stop-color="#070a12"/>
+    </linearGradient>
+
+    <!-- Subtle Radial Aura -->
+    <radialGradient id="auraGrad" cx="50%" cy="52%" r="45%">
+      <stop offset="0%" stop-color="#d97706" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#b45309" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gold Gradient for Petals -->
+    <linearGradient id="goldGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+
+    <!-- Light Gold Accent Gradient -->
+    <linearGradient id="lightGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas with Rounded Corners for App Icon -->
+  <rect width="512" height="512" rx="115" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Subtle Gold Border -->
+  <rect width="504" height="504" x="4" y="4" rx="112" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-opacity="0.25"/>
+
+  <!-- Radiant Aura Glow Behind Lotus -->
+  <circle cx="256" cy="265" r="210" fill="url(#auraGrad)"/>
+
+  <!-- Minimalist Zen Ring (Halo of Mindfulness) -->
+  <circle cx="256" cy="265" r="145" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-opacity="0.35" stroke-dasharray="14 8"/>
+
+  <!-- Top Flame / Drop of Wisdom (รัศมีธรรม / หยดน้ำค้างปัญญา) -->
+  <path d="M256,128 C266,155 272,170 272,185 C272,198 265,206 256,206 C247,206 240,198 240,185 C240,170 246,155 256,128 Z" 
+        fill="url(#lightGoldGrad)" 
+        filter="url(#goldGlow)"/>
+
+  <!-- Lotus Center Seed Core -->
+  <ellipse cx="256" cy="275" rx="8" ry="14" fill="url(#lightGoldGrad)" opacity="0.9"/>
+
+  <!-- Lotus Center Main Petal (กลีบกลางยอดบัว) -->
+  <path d="M256,190 C274,235 285,285 256,335 C227,285 238,235 256,190 Z" 
+        fill="url(#goldGrad)" 
+        filter="url(#goldGlow)"/>
+
+  <!-- Left Inner Petal (กลีบในซ้าย) -->
+  <path d="M256,220 C230,240 195,275 208,318 C224,332 245,334 256,335 C245,300 248,255 256,220 Z" 
+        fill="url(#goldGrad)" 
+        opacity="0.92"/>
+
+  <!-- Right Inner Petal (กลีบในขวา) -->
+  <path d="M256,220 C282,240 317,275 304,318 C288,332 267,334 256,335 C267,300 264,255 256,220 Z" 
+        fill="url(#goldGrad)" 
+        opacity="0.92"/>
+
+  <!-- Left Outer Graceful Petal (กลีบนอกซ้าย) -->
+  <path d="M250,260 C205,270 148,305 160,345 C190,360 230,348 254,338 C232,320 238,285 250,260 Z" 
+        fill="url(#goldGrad)" 
+        opacity="0.8"/>
+
+  <!-- Right Outer Graceful Petal (กลีบนอกขวา) -->
+  <path d="M262,260 C307,270 364,305 352,345 C322,360 282,348 258,338 C280,320 274,285 262,260 Z" 
+        fill="url(#goldGrad)" 
+        opacity="0.8"/>
+
+  <!-- Bottom Calyx Foundation (ฐานบัว / กิ่งบงกช) -->
+  <path d="M200,352 C236,368 276,368 312,352 C285,372 227,372 200,352 Z" 
+        fill="url(#lightGoldGrad)" 
+        opacity="0.85"/>
+
+  <!-- 3 Sacred Dots of Buddhist Triple Gem (พระรัตนตรัย พระพุทธ พระธรรม พระสงฆ์) -->
+  <circle cx="236" cy="392" r="5" fill="url(#lightGoldGrad)" opacity="0.75"/>
+  <circle cx="256" cy="396" r="6" fill="url(#lightGoldGrad)" opacity="0.95"/>
+  <circle cx="276" cy="392" r="5" fill="url(#lightGoldGrad)" opacity="0.75"/>
+</svg>
