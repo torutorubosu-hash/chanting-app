@@ -42,11 +42,11 @@ let appState = {
 };
 
 const STORAGE_KEYS = {
-  LIBRARY: 'chant_app_library_v6',
-  SEQUENCES: 'chant_app_sequences_v6',
-  ACTIVE_SEQ: 'chant_app_active_seq_v6',
-  ACTIVE_ITEMS: 'chant_app_active_items_v6',
-  SETTINGS: 'chant_app_settings_v6'
+  LIBRARY: 'chant_app_library_v7',
+  SEQUENCES: 'chant_app_sequences_v7',
+  ACTIVE_SEQ: 'chant_app_active_seq_v7',
+  ACTIVE_ITEMS: 'chant_app_active_items_v7',
+  SETTINGS: 'chant_app_settings_v7'
 };
 
 // Web Audio API Bell Synthesizer (Mobile-Safe)
