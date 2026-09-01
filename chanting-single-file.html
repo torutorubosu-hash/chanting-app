@@ -2032,10 +2032,8 @@ function nextPrayer() {
   if (appState.currentStepIndex < appState.currentSequenceItems.length - 1) {
     appState.currentStepIndex++;
     appState.currentRepCount = 0;
-    playBellSound();
     renderChantingReader();
   } else {
-    playBellSound();
     alert('🎉 ขออนุโมทนาบุญ สาธุ! ท่านได้สวดมนต์ครบตามลำดับเรียบร้อยแล้ว');
     appState.currentStepIndex = 0;
     appState.currentRepCount = 0;
