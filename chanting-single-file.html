@@ -1621,13 +1621,17 @@ function unlockAudioOnMobile() {
 function initData() {
   const savedLibrary = safeStorage.getItem(STORAGE_KEYS.LIBRARY);
   if (savedLibrary) {
-    try { appState.library = JSON.parse(savedLibrary); } catch (e) { appState.library = [...DEFAULT_PRAYERS]; }
+    try { appState.library = JSON.parse(savedLibrary); } catch (e) { appState.library = JSON.parse(JSON.stringify(DEFAULT_PRAYERS)); }
   } else {
     appState.library = JSON.parse(JSON.stringify(DEFAULT_PRAYERS));
   }
 
+  // Always sync official default prayers with updated texts
   DEFAULT_PRAYERS.forEach(dp => {
-    if (!appState.library.some(p => p.id === dp.id)) {
+    const existingIndex = appState.library.findIndex(p => p.id === dp.id);
+    if (existingIndex !== -1) {
+      appState.library[existingIndex] = JSON.parse(JSON.stringify(dp));
+    } else {
       appState.library.push(JSON.parse(JSON.stringify(dp)));
     }
   });
